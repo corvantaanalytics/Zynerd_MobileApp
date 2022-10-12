@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './views/subscription_policy.dart';
+import './views/landing.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
           // primarySwatch: Colors.orange,
           ),
       home: const ContactUs(),
+           
     );
   }
 }
