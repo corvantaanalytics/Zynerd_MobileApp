@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './views/subscription_policy.dart';
-
+import './views/landing.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
+      title: 'Zynerd',
+      theme: ThemeData(fontFamily: 'Lora'
           // This is the theme of your application.
           //
           // Try running your application with "flutter run". You'll see the
@@ -26,9 +26,22 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           // primarySwatch: Colors.orange,
           ),
-      home: const ContactUs(),
-       
-           
+      home: const SubPolicy(),
     );
   }
 }
+
+// class SubPolicy extends StatelessWidget {
+//   const SubPolicy({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       decoration: const BoxDecoration(
+//         image: DecorationImage(
+//             image: AssetImage('assets/images/ProfileBackground.png'),
+//             fit: BoxFit.cover),
+//       ),
+//     );
+//   }
+// }
