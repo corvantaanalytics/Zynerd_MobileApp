@@ -196,9 +196,10 @@ class AboutUsState extends State<AboutUs> {
       //       ),
       //     ],
       //   ),
-      body: ListView(children: [
+      body: ListView(
+        children: [
         Container(
-            height: 75,
+            // height: 100,
             // margin: EdgeInsets.all(14.0),
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -216,6 +217,9 @@ class AboutUsState extends State<AboutUs> {
                         fontWeight: FontWeight.w700,
                         fontFamily: 'Lora'),
                   ),
+                    SizedBox(
+      height: 20, 
+    ),
                   Padding(
                     padding: EdgeInsets.only(left: 8, right: 8),
                     child: Text(
@@ -235,6 +239,9 @@ class AboutUsState extends State<AboutUs> {
             child: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
+              SizedBox(
+      height: 20, 
+    ),
             Text(
               'Who We Are',
               textAlign: TextAlign.center,
@@ -243,6 +250,9 @@ class AboutUsState extends State<AboutUs> {
                   fontWeight: FontWeight.w700,
                   fontFamily: 'Lora'),
             ),
+              SizedBox(
+      height: 20, 
+    ),
             Padding(
               padding: EdgeInsets.only(left: 8, right: 8),
               child: Text(
@@ -297,6 +307,9 @@ class AboutUsState extends State<AboutUs> {
             ),
           ],
         )),
+         SizedBox(
+      height: 20, 
+    ),
         Container(
           child: Container(
             height: 115,
@@ -318,9 +331,9 @@ class AboutUsState extends State<AboutUs> {
         ),
         Container(
           child: Container(
-            height: 60,
+            height: 50,
             child: Text("01.Lorem ipsum dolor sit amet",
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.left,
                 style: TextStyle(
                     fontSize: 20,
                     fontFamily: 'Poppins',
@@ -330,7 +343,7 @@ class AboutUsState extends State<AboutUs> {
         ),
         Container(
           child: Container(
-            height: 60,
+            height: 50,
             child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod.",
                 textAlign: TextAlign.center,
@@ -343,9 +356,9 @@ class AboutUsState extends State<AboutUs> {
         ),
         Container(
           child: Container(
-            height: 60,
+            height: 50,
             child: Text("01.Lorem ipsum dolor sit amet",
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.left,
                 style: TextStyle(
                     fontSize: 20,
                     fontFamily: 'Poppins',
@@ -355,7 +368,7 @@ class AboutUsState extends State<AboutUs> {
         ),
         Container(
           child: Container(
-            height: 60,
+            height: 50,
             child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod.",
                 textAlign: TextAlign.center,
@@ -368,9 +381,9 @@ class AboutUsState extends State<AboutUs> {
         ),
         Container(
           child: Container(
-            height: 60,
+            height: 50,
             child: Text("01.Lorem ipsum dolor sit amet",
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.left,
                 style: TextStyle(
                     fontSize: 20,
                     fontFamily: 'Poppins',
@@ -380,7 +393,7 @@ class AboutUsState extends State<AboutUs> {
         ),
         Container(
           child: Container(
-            height: 60,
+            height: 30,
             child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod.",
                 textAlign: TextAlign.center,
@@ -391,9 +404,12 @@ class AboutUsState extends State<AboutUs> {
                     color: Color(0xFF0C0C0C))),
           ),
         ),
+                 SizedBox(
+      height: 20, 
+    ),
         Container(
           child: Container(
-            height: 60,
+            height: 50,
             child: Text("Purpose",
                 textAlign: TextAlign.left,
                 style: TextStyle(
@@ -403,12 +419,13 @@ class AboutUsState extends State<AboutUs> {
                     color: Color(0xFF0C0C0C))),
           ),
         ),
+
         Container(
           child: Container(
             height: 60,
             child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod. Et dignissim cursus ultricies id nunc est placerat sed. Feugiat elit pretium posuere interdum aenean auctor rhoncus odio curabitur. In euismod ultricies magna metus ut pretium malesuada aliquet. Eget nunc enim mus lectus maecenas nibh volutpat. Diam in blandit enim at diam accumsan in. Dolor elementum tristique quis et proin. In sit tempus ut.",
-                textAlign: TextAlign.left,
+                textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Poppins',
