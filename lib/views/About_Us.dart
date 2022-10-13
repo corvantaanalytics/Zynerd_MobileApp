@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:zynerd_app/views/Signin.dart';
+import 'package:zynerd_app/views/contact_us.dart';
 
 class AboutUs extends StatefulWidget {
   const AboutUs({Key? key}) : super(key: key);
@@ -30,7 +31,7 @@ class AboutUsState extends State<AboutUs> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Signin()),
+              MaterialPageRoute(builder: (context) => const ContactUs()),
             );
           },
         ),
@@ -196,8 +197,7 @@ class AboutUsState extends State<AboutUs> {
       //       ),
       //     ],
       //   ),
-      body: ListView(
-        children: [
+      body: ListView(children: [
         Container(
             // height: 100,
             // margin: EdgeInsets.all(14.0),
@@ -217,9 +217,9 @@ class AboutUsState extends State<AboutUs> {
                         fontWeight: FontWeight.w700,
                         fontFamily: 'Lora'),
                   ),
-                    SizedBox(
-      height: 20, 
-    ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Padding(
                     padding: EdgeInsets.only(left: 8, right: 8),
                     child: Text(
@@ -239,9 +239,9 @@ class AboutUsState extends State<AboutUs> {
             child: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-              SizedBox(
-      height: 20, 
-    ),
+            SizedBox(
+              height: 20,
+            ),
             Text(
               'Who We Are',
               textAlign: TextAlign.center,
@@ -250,9 +250,9 @@ class AboutUsState extends State<AboutUs> {
                   fontWeight: FontWeight.w700,
                   fontFamily: 'Lora'),
             ),
-              SizedBox(
-      height: 20, 
-    ),
+            SizedBox(
+              height: 20,
+            ),
             Padding(
               padding: EdgeInsets.only(left: 8, right: 8),
               child: Text(
@@ -307,9 +307,9 @@ class AboutUsState extends State<AboutUs> {
             ),
           ],
         )),
-         SizedBox(
-      height: 20, 
-    ),
+        SizedBox(
+          height: 20,
+        ),
         Container(
           child: Container(
             height: 115,
@@ -404,9 +404,9 @@ class AboutUsState extends State<AboutUs> {
                     color: Color(0xFF0C0C0C))),
           ),
         ),
-                 SizedBox(
-      height: 20, 
-    ),
+        SizedBox(
+          height: 20,
+        ),
         Container(
           child: Container(
             height: 50,
@@ -419,7 +419,6 @@ class AboutUsState extends State<AboutUs> {
                     color: Color(0xFF0C0C0C))),
           ),
         ),
-
         Container(
           child: Container(
             height: 60,
