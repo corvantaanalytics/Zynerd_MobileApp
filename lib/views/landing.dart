@@ -99,9 +99,18 @@ class _LandingState extends State<Landing> {
                             SizedBox(
       height: 10, 
     ),
-    
+     Text(
+                      'The Smartest',
+                      
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 36,
+                           overflow: TextOverflow.fade,
+                          fontWeight: FontWeight.w800,
+                          fontFamily: 'Lora'),
+                    ),
                     Text(
-                      'The Smartest Guidance for Your! ',
+                      'Guidance for Your',
                       
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -147,13 +156,13 @@ class _LandingState extends State<Landing> {
       style: ButtonStyle(
         
         foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-        backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 3, 74, 161)),
+        backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF005D8C)),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           
           RoundedRectangleBorder(
             
             borderRadius: BorderRadius.circular(7),
-            side: BorderSide(color: Color.fromARGB(255, 3, 74, 161),width: 6.0, style: BorderStyle.solid)
+            side: BorderSide(color: Color(0xFF005D8C),width: 6.0, style: BorderStyle.solid)
           )
         )
         
