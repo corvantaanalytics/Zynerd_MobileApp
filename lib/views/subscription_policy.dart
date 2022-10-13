@@ -176,7 +176,14 @@ class _SubPolicyState extends State<SubPolicy>
                               child: Text('2'),
                             ),
                             Card(
-                              child: Text('3'),
+                              child: Text(
+                                '''\n\n\t\t\tTill the time the subscription plans are launched, ZyNerd shall be receiving voluntary contributions from users. Voluntary contributions thus received shall be not be towards any services provided by ZyNerd, or to be provided by ZyNerd at any point in time in the future. The voluntary contributions do not fall under the refund policy, and ZyNerd shall not accept any claim whatsoever for any refund of voluntary contributions received, or for provision of services, or access to subscription plans against the voluntary contributions.''',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontFamily: 'Poppins',
+                                    fontWeight: FontWeight.w300,
+                                    height: 1.6),
+                              ),
                             ),
 
                             // Text('corvanta'),
