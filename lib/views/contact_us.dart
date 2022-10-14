@@ -18,38 +18,39 @@ void _pushMenu() {
 class _ContactUsState extends State<ContactUs> {
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Image.asset(
-              'assets/images/Landing/ZyNerd-Final-Logo.png',
-              height: 25,
-              width: 100,
-              fit: BoxFit.fill,
-            ),
-            onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => const Signin()),
-              // );
-            },
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Image.asset(
+            'assets/images/Landing/ZyNerd-Final-Logo.png',
+            height: 25,
+            width: 100,
+            fit: BoxFit.fill,
           ),
-          leadingWidth: 200,
-          actions: [
-            Icon(
-              Icons.menu_sharp,
-              color: Colors.blue[900],
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12),
-            )
-          ],
-          backgroundColor: Colors.white,
+          onPressed: () {
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(builder: (context) => const Signin()),
+            // );
+          },
         ),
-        body: ListView(
-          children: [
-            Container(
-                child: Container(
-              height: 370,
+        leadingWidth: 200,
+        actions: [
+          Icon(
+            Icons.menu_sharp,
+            color: Colors.blue[900],
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12),
+          )
+        ],
+        backgroundColor: Colors.white,
+      ),
+      body: ListView(
+        children: [
+          Container(
+            child: Container(
+              height: 312,
+              width: 335,
               margin: EdgeInsets.all(14.0),
               decoration: const BoxDecoration(
                 image: DecorationImage(
@@ -59,78 +60,189 @@ class _ContactUsState extends State<ContactUs> {
               ),
               child: Column(
                 children: [
-                  Text(
-                    'Contact us',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Lora'),
+                  Padding(
+                    padding: EdgeInsets.only(right: 170),
+                    child: Text(
+                      'Contact us',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontSize: 36,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: 'Lora'),
+                    ),
                   ),
-                  Text('Have Some Questions?',
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 20, right: 150),
+                    child: Text(
+                      'Have Some Questions?',
                       textAlign: TextAlign.left,
                       style: TextStyle(
                           fontSize: 20,
-                          color: Color(0xFFF85D05),
                           fontWeight: FontWeight.w500,
-                          fontFamily: 'Poppins')),
-                  Text(
-                    'Lorem ipsum dolor sit amet, consectetur',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w300,
-                        fontFamily: 'Poppins'),
+                          fontFamily: 'Poppins',
+                          color: Color(0xFFF85D05)),
+                    ),
                   ),
-                  Text(
-                    'adipiscing elit. Magna diam ultricies',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w300,
-                        fontFamily: 'Poppins'),
+                  SizedBox(
+                    height: 10,
                   ),
-                  Text(
-                    'sollicitudin.',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w300,
-                        fontFamily: 'Poppins'),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, right: 35),
+                    child: Text(
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w300,
+                          fontFamily: 'Poppins',
+                          color: Color(0xFF767A7C)),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: 190),
+                    child: Text(
+                      ' elit. Magna diam ultricies',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w300,
+                          fontFamily: 'Poppins',
+                          color: Color(0xFF767A7C)),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: 270),
+                    child: Text(
+                      'sollicitudin.',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w300,
+                          fontFamily: 'Poppins',
+                          color: Color(0xFF767A7C)),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
                   ),
                   Container(
-                    child: Column(
+                    width: 330,
+                    child: Row(
                       children: [
-                        Container(
-                          height: 100,
-                          margin: EdgeInsets.all(14.0),
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/images/ContactUs/Call.png'),
-                                alignment: Alignment.centerLeft),
+                        Center(
+                          child: Column(
+                            children: [
+                              new Image.asset(
+                                "assets/images/ContactUs/Call.png",
+                                // width: 40,
+                                // height: 40,
+                                fit: BoxFit.cover,
+                              ),
+                            ],
                           ),
                         ),
+                        SizedBox(
+                          width: 5,
+                        ),
                         Container(
-                          height: 100,
-                          margin: EdgeInsets.all(14.0),
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/images/ContactUs/Call.png'),
-                                alignment: Alignment.centerLeft),
+                          width: 80,
+                          child: Column(
+                            children: [
+                              Text(
+                                '+91-9003578125',
+                                maxLines: 1,
+                                overflow: TextOverflow.visible,
+                                softWrap: false,
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 16,
+                                    color: Color(0xFF0C0C0C)),
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Container(
+                    width: 330,
+                    child: Row(
+                      children: [
+                        Center(
+                          child: Column(
+                            children: [
+                              new Image.asset(
+                                "assets/images/ContactUs/Mail.png",
+                                fit: BoxFit.cover,
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Container(
+                          // width: 80,
+                          child: Column(
+                            children: [
+                              Text(
+                                'hello@zynerd.com',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 16, color: Color(0xFF0C0C0C)),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text('ALL'),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text('MEDICAL'),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text('ENGINEERING'),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text('ART'),
+                      ),
+                    ],
+                  ),
                 ],
               ),
-            )),
-          ],
-        ));
+            ),
+          ),
+          Container(
+            height: 180,
+            width: 355,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/images/ContactUs/conatct.png'),
+                  fit: BoxFit.fill),
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
