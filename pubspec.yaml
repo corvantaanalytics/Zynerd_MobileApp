@@ -99,6 +99,7 @@ flutter:
     - assets/ #folder indexing, all files will get indexed
     - assets/images/ #assets subfolder all files indexing
     - assets/images/Landing/ #assets subfolder all files indexing
+    - assets/images/ContactUs/
   #   - images/a_dot_ham.jpeg
 # flutter:
 
