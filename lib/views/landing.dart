@@ -566,7 +566,9 @@ child: Stack(
 
          Row(
         children: [
-          
+          SizedBox(
+              width: 40,
+            ),
            TextButton(
             onPressed:() {},
            child: const Text('ALL'),
