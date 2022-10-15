@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './views/subscription_policy.dart';
+import './views/landing.dart';
+// ignore_for_file: prefer_const_constructors
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           // primarySwatch: Colors.orange,
           ),
-      home: const SubPolicy(),
+      home: const Landing(),
       
     );
   }

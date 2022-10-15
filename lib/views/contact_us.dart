@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zynerd_app/views/Signin.dart';
-import 'package:zynerd_app/views/landing.dart';
 
 class ContactUs extends StatefulWidget {
   const ContactUs({Key? key}) : super(key: key);
@@ -16,6 +14,7 @@ void _pushMenu() {
 }
 
 class _ContactUsState extends State<ContactUs> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
