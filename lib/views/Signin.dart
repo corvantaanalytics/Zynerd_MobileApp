@@ -96,6 +96,7 @@ class  _SigninState  extends State<Signin> {
                       'Email ',
                       textAlign: TextAlign.left,
                       style: TextStyle(
+                          fontFamily: 'poppins',
                           fontSize: 18,
                            color: Colors.black,
                           fontWeight: FontWeight.w400,
@@ -127,6 +128,7 @@ class  _SigninState  extends State<Signin> {
                       'Password',
                       textAlign: TextAlign.left,
                       style: TextStyle(
+                          fontFamily: 'poppins',
                           fontSize: 18,
                            color: Colors.black,
                           fontWeight: FontWeight.w400,
@@ -175,8 +177,12 @@ class  _SigninState  extends State<Signin> {
           },
                             child: const Text(
                               'Forgot password?',
-                              textAlign: TextAlign.right,
+                               textAlign: TextAlign.right,
+                               maxLines: 1,
+                                    overflow: TextOverflow.visible,
+                                    softWrap: false,
                               style: TextStyle(
+                                 fontFamily: 'poppins',
                                color: Color(0xFF005D8C),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
@@ -210,6 +216,7 @@ class  _SigninState  extends State<Signin> {
                                   'Sign in',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
+                                     fontFamily: 'poppins',
                                       fontSize: 18,
                                       fontWeight: FontWeight.w500,
                                      ),
@@ -228,6 +235,7 @@ class  _SigninState  extends State<Signin> {
                         
                           color: Color(0xFF9DA3A6),
                           fontSize: 16,
+                           fontFamily: 'poppins',
                           fontWeight: FontWeight.w400,
                          ),),
                   TextButton(
@@ -239,7 +247,9 @@ class  _SigninState  extends State<Signin> {
           },
                             child: const Text(
                               'Sign Up',
+                              
                               style: TextStyle(
+                                 fontFamily: 'poppins',
                                 color: Color(0xFF005D8C),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
