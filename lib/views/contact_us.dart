@@ -60,7 +60,7 @@ class _ContactUsState extends State<ContactUs> {
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(right: 170),
+                    padding: EdgeInsets.only(right: 170, top: 15),
                     child: Text(
                       'Contact us',
                       textAlign: TextAlign.left,
@@ -171,7 +171,7 @@ class _ContactUsState extends State<ContactUs> {
                     ),
                   ),
                   SizedBox(
-                    height: 5,
+                    height: 20,
                   ),
                   Container(
                     width: 330,
@@ -206,26 +206,76 @@ class _ContactUsState extends State<ContactUs> {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: 25,
+                  ),
                   Row(
                     children: [
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text('ALL'),
+                      Padding(padding: EdgeInsets.only(right: 30)),
+                      CircleAvatar(
+                        radius: 20,
+                        backgroundColor: Color.fromARGB(255, 189, 207, 225),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8), // Border radius
+                          child: ClipOval(
+                              child: Image.asset(
+                                  'assets/images/Landing/Quora.png')),
+                        ),
                       ),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text('MEDICAL'),
+                      SizedBox(
+                        width: 20,
                       ),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text('ENGINEERING'),
+                      CircleAvatar(
+                        radius: 20,
+                        backgroundColor: Color.fromARGB(255, 189, 207, 225),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8), // Border radius
+                          child: ClipOval(
+                              child: Image.asset(
+                                  'assets/images/Landing/Facebook.png')),
+                        ),
                       ),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text('ART'),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      CircleAvatar(
+                        radius: 20,
+                        backgroundColor: Color.fromARGB(255, 189, 207, 225),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8), // Border radius
+                          child: ClipOval(
+                              child: Image.asset(
+                                  'assets/images/Landing/Telegram.png')),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      CircleAvatar(
+                        radius: 20,
+                        backgroundColor: Color.fromARGB(255, 189, 207, 225),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8), // Border radius
+                          child: ClipOval(
+                              child: Image.asset(
+                                  'assets/images/Landing/Twitter.png')),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      CircleAvatar(
+                        radius: 20,
+                        backgroundColor: Color.fromARGB(255, 189, 207, 225),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8), // Border radius
+                          child: ClipOval(
+                              child: Image.asset(
+                                  'assets/images/Landing/Youtube.png')),
+                        ),
                       ),
                     ],
-                  ),
+                  )
                 ],
               ),
             ),
