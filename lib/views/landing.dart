@@ -173,7 +173,7 @@ class _LandingState extends State<Landing> {
                             style: TextStyle(
                                 //  height: 0,
                                 fontSize: 36,
-                                color: Colors.orange,
+                                color: Color(0xFFF85D05),
                                 //  overflow: TextOverflow.fade,
                                 fontWeight: FontWeight.w800,
                                 fontFamily: 'Lora'),
