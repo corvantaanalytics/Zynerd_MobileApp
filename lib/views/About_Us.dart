@@ -18,6 +18,7 @@ void _pushMenu() {
 }
 
 class AboutUsState extends State<AboutUs> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -330,7 +331,7 @@ class AboutUsState extends State<AboutUs> {
           ),
         ),
         Container(
-          child: Container(
+          child: SizedBox(
             height: 50,
             child: Text("01.Lorem ipsum dolor sit amet",
                 textAlign: TextAlign.left,
@@ -342,7 +343,7 @@ class AboutUsState extends State<AboutUs> {
           ),
         ),
         Container(
-          child: Container(
+          child: SizedBox(
             height: 50,
             child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod.",
@@ -355,7 +356,7 @@ class AboutUsState extends State<AboutUs> {
           ),
         ),
         Container(
-          child: Container(
+          child: SizedBox(
             height: 50,
             child: Text("01.Lorem ipsum dolor sit amet",
                 textAlign: TextAlign.left,
@@ -367,7 +368,7 @@ class AboutUsState extends State<AboutUs> {
           ),
         ),
         Container(
-          child: Container(
+          child: SizedBox(
             height: 50,
             child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod.",
@@ -380,7 +381,7 @@ class AboutUsState extends State<AboutUs> {
           ),
         ),
         Container(
-          child: Container(
+          child: SizedBox(
             height: 50,
             child: Text("01.Lorem ipsum dolor sit amet",
                 textAlign: TextAlign.left,
@@ -392,7 +393,7 @@ class AboutUsState extends State<AboutUs> {
           ),
         ),
         Container(
-          child: Container(
+          child: SizedBox(
             height: 30,
             child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod.",
@@ -408,7 +409,7 @@ class AboutUsState extends State<AboutUs> {
           height: 20,
         ),
         Container(
-          child: Container(
+          child: SizedBox(
             height: 50,
             child: Text("Purpose",
                 textAlign: TextAlign.left,
@@ -420,7 +421,7 @@ class AboutUsState extends State<AboutUs> {
           ),
         ),
         Container(
-          child: Container(
+          child: SizedBox(
             height: 60,
             child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod. Et dignissim cursus ultricies id nunc est placerat sed. Feugiat elit pretium posuere interdum aenean auctor rhoncus odio curabitur. In euismod ultricies magna metus ut pretium malesuada aliquet. Eget nunc enim mus lectus maecenas nibh volutpat. Diam in blandit enim at diam accumsan in. Dolor elementum tristique quis et proin. In sit tempus ut.",
