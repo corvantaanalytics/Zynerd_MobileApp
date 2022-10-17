@@ -4,25 +4,27 @@ import 'package:footer/footer_view.dart';
 import 'package:zynerd_app/views/About_Us.dart';
 import 'package:zynerd_app/views/contact_us.dart';
 import 'package:zynerd_app/views/subscription_policy.dart';
+
 void main() {
   runApp(Footer());
 }
+
 class Footer extends StatelessWidget {
   // This widget is the root of your application.
   static Map<int, Color> color = {
-    50:Color.fromRGBO(4, 131, 184, .1),
-    100:Color.fromRGBO(4, 131, 184, .2),
-    200:Color.fromRGBO(4, 131, 184, .3),
-    300:Color.fromRGBO(4, 131, 184, .4),
-    400:Color.fromRGBO(4, 131, 184, .5),
-    500:Color.fromRGBO(4, 131, 184, .6),
-    600:Color.fromRGBO(4, 131, 184, .7),
-    700:Color.fromRGBO(4, 131, 184, .8),
-    800:Color.fromRGBO(4, 131, 184, .9),
-    900:Color.fromRGBO(4, 131, 184, 1),
+    50: Color.fromRGBO(4, 131, 184, .1),
+    100: Color.fromRGBO(4, 131, 184, .2),
+    200: Color.fromRGBO(4, 131, 184, .3),
+    300: Color.fromRGBO(4, 131, 184, .4),
+    400: Color.fromRGBO(4, 131, 184, .5),
+    500: Color.fromRGBO(4, 131, 184, .6),
+    600: Color.fromRGBO(4, 131, 184, .7),
+    700: Color.fromRGBO(4, 131, 184, .8),
+    800: Color.fromRGBO(4, 131, 184, .9),
+    900: Color.fromRGBO(4, 131, 184, 1),
   };
   //MaterialColor myColor = MaterialColor(0xFF162A49, color);
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,164 +37,152 @@ class Footer extends StatelessWidget {
     );
   }
 }
+
 class FooterPage extends StatefulWidget {
   @override
   FooterPageState createState() {
     return new FooterPageState();
   }
 }
+
 class FooterPageState extends State<FooterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       bottomNavigationBar: Stack(
-          children: [
-
-
-         Container(
+      bottomNavigationBar: Stack(
+        children: [
+          Container(
             child: Container(
-              
               height: 312,
               width: 430,
-             color: Color(0xFF01505F),
-             
+              color: Color(0xFF01505F),
               child: Column(
                 children: [
                   Container(
-                
-                            margin: EdgeInsets.only(right: 240),
-            height: 30,
-            width: 128,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/images/Footer/zynerd-white.png'),
-                  fit: BoxFit.fill),
-          
-            ),
-          ),
+                    margin: EdgeInsets.only(right: 240),
+                    height: 30,
+                    width: 128,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage(
+                              'assets/images/Footer/zynerd-white.png'),
+                          fit: BoxFit.fill),
+                    ),
+                  ),
                   SizedBox(
                     height: 20,
                   ),
-                 
-           SizedBox(
-                    width:20,
+                  SizedBox(
+                    width: 20,
                   ),
-                 
-                 
-                 
                   Row(
                     children: [
-                  
                       TextButton(
-
-                            onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const AboutUs()),
-            );
-          },
-                            child: const Text(
-                              'About Us',
-                               textAlign: TextAlign.right,
-                              style: TextStyle(
-                                 fontFamily: 'poppins',
-                               color: Colors.white,
-                                fontSize: 12,
-
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AboutUs()),
+                          );
+                        },
+                        child: const Text(
+                          'About Us',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            fontFamily: 'poppins',
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
                           ),
-                        TextButton(
-
-                            onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SubPolicy()),
-            );
-          },
-                            child: const Text(
-                              'Privacy policy',
-                               textAlign: TextAlign.right,
-                              style: TextStyle(
-                                 fontFamily: 'poppins',
-                               color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SubPolicy()),
+                          );
+                        },
+                        child: const Text(
+                          'Privacy policy',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            fontFamily: 'poppins',
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
                           ),
+                        ),
+                      ),
                     ],
                   ),
-                   
-                 
-                   Row(
+                  Row(
                     children: [
                       TextButton(
-
-                            onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ContactUs()),
-            );
-          },
-                            child: const Text(
-                              'Contact Us ',
-                              textAlign: TextAlign.right,
-                              style: TextStyle(
-                                 fontFamily: 'poppins',
-                               color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ContactUs()),
+                          );
+                        },
+                        child: const Text(
+                          'Contact Us ',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            fontFamily: 'poppins',
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
                           ),
-                        TextButton(
-
-                            onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SubPolicy()),
-            );
-          },
-                            child: const Text(
-                              'Terms Of Service',
-                               textAlign: TextAlign.right,
-                              style: TextStyle(
-                               color: Colors.white,
-                                fontFamily: 'poppins',
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SubPolicy()),
+                          );
+                        },
+                        child: const Text(
+                          'Terms Of Service',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'poppins',
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
                           ),
+                        ),
+                      ),
                     ],
                   ),
-                   Row(
+                  Row(
                     children: [
                       TextButton(
-
-                            onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ContactUs()),
-            );
-          },
-                            child: const Text(
-                              'Subscription Policy ',
-                             textAlign: TextAlign.right,
-                              style: TextStyle(
-                                 fontFamily: 'poppins',
-                               color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ContactUs()),
+                          );
+                        },
+                        child: const Text(
+                          'Subscription Policy ',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            fontFamily: 'poppins',
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
                           ),
-                    
+                        ),
+                      ),
                     ],
                   ),
-                       SizedBox(
+                  SizedBox(
                     height: 25,
                   ),
                   Row(
@@ -260,28 +250,26 @@ class FooterPageState extends State<FooterPage> {
                                   'assets/images/Footer/youtube-dark.png')),
                         ),
                       ),
-                     
                     ],
                   ),
-                 SizedBox(
-                  height: 20,
-                 ),
-                   Text(
-                          ' © ZyNerd 2022. Developed by ZyNerd',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 10,
-                              fontFamily: 'poppins',
-                              fontWeight: FontWeight.w300,
-                              color: Colors.white),
-                        ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    ' © ZyNerd 2022. Developed by ZyNerd',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 10,
+                        fontFamily: 'poppins',
+                        fontWeight: FontWeight.w300,
+                        color: Colors.white),
+                  ),
                 ],
               ),
             ),
           ),
-         
-          ],
-        ),
+        ],
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:zynerd_app/views/ForgotPassword2.dart';
 import 'package:zynerd_app/views/Signin.dart';
 
 import 'SignUp.dart';
@@ -51,7 +52,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   Padding(
                     padding: EdgeInsets.only(right: 280),
                     child: Text(
-                      'Forgot Password, ',
+                      'Forgot Pasword, ',
+                      maxLines: 1,
+                      overflow: TextOverflow.visible,
+                      softWrap: false,
                       textAlign: TextAlign.left,
                       style: TextStyle(
                           fontSize: 20,
@@ -89,6 +93,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 18,
+                    fontFamily: 'poppins',
                     color: Colors.black,
                     fontWeight: FontWeight.w400,
                   ),
@@ -135,12 +140,17 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 10) //content padding inside button
                             ),
                         onPressed: () {
-                          //code to execute when this button is pressed.
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ForgotPassword2()),
+                          );
                         },
                         child: Text(
                           'Send OTP',
                           textAlign: TextAlign.center,
                           style: TextStyle(
+                            fontFamily: 'poppins',
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
                           ),
@@ -162,6 +172,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     child: const Text(
                       'Back To Sign In',
                       style: TextStyle(
+                        fontFamily: 'poppins',
                         color: Color(0xFF005D8C),
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
