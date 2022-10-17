@@ -121,7 +121,6 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                   'OTP ',
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                    fontFamily: 'poppins',
                     fontSize: 18,
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -162,7 +161,6 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                   overflow: TextOverflow.visible,
                   softWrap: false,
                   style: TextStyle(
-                    fontFamily: 'poppins',
                     fontSize: 18,
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -200,7 +198,6 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                   softWrap: false,
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                    fontFamily: 'poppins',
                     fontSize: 18,
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -259,7 +256,6 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                           'Change my password',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontFamily: 'poppins',
                             fontSize: 18,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w500,
@@ -283,7 +279,6 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                       'Back To Sign In',
                       style: TextStyle(
                         color: Color(0xFF005D8C),
-                        fontFamily: 'poppins',
                         fontSize: 16,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w400,

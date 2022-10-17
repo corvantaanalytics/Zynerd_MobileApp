@@ -151,7 +151,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           'Send OTP',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontFamily: 'poppins',
                             fontSize: 18,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w500,
@@ -176,7 +175,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       style: TextStyle(
                         fontFamily: 'poppins',
                         color: Color(0xFF005D8C),
-                        fontFamily: 'Poppins',
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       ),
