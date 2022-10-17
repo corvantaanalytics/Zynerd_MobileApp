@@ -53,6 +53,9 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                     child: Text(
                       'Forgot Password, ',
                       textAlign: TextAlign.left,
+                      maxLines: 1,
+                      overflow: TextOverflow.visible,
+                      softWrap: false,
                       style: TextStyle(
                           fontSize: 20,
                           color: Color(0xFFF85D05),
@@ -82,6 +85,9 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                     child: Text(
                       'We have sent the verification code to your email',
                       textAlign: TextAlign.center,
+                      maxLines: 1,
+                      overflow: TextOverflow.visible,
+                      softWrap: false,
                       style: TextStyle(
                           fontSize: 14,
                           fontFamily: 'Poppins',
@@ -94,6 +100,9 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                     child: Text(
                       'abc@zynerd.com',
                       textAlign: TextAlign.center,
+                      maxLines: 1,
+                      overflow: TextOverflow.visible,
+                      softWrap: false,
                       style: TextStyle(
                           fontSize: 14,
                           fontFamily: 'Poppins',
@@ -112,6 +121,7 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                   'OTP ',
                   textAlign: TextAlign.left,
                   style: TextStyle(
+                    fontFamily: 'poppins',
                     fontSize: 18,
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -144,11 +154,15 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                 height: 10,
               ),
               Padding(
-                padding: EdgeInsets.only(right: 290),
+                padding: EdgeInsets.only(right: 210),
                 child: Text(
                   'New Password ',
                   textAlign: TextAlign.left,
+                  maxLines: 1,
+                  overflow: TextOverflow.visible,
+                  softWrap: false,
                   style: TextStyle(
+                    fontFamily: 'poppins',
                     fontSize: 18,
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -178,11 +192,15 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(right: 290),
+                padding: EdgeInsets.only(right: 200),
                 child: Text(
                   'Confirm Password',
+                  maxLines: 1,
+                  overflow: TextOverflow.visible,
+                  softWrap: false,
                   textAlign: TextAlign.left,
                   style: TextStyle(
+                    fontFamily: 'poppins',
                     fontSize: 18,
                     fontFamily: 'Poppins',
                     color: Colors.black,
@@ -211,6 +229,9 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                               ))))),
                 ],
               ),
+              SizedBox(
+                height: 20,
+              ),
               Center(
                   child: SizedBox(
                       height: 48, //height of button
@@ -238,6 +259,7 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                           'Change my password',
                           textAlign: TextAlign.center,
                           style: TextStyle(
+                            fontFamily: 'poppins',
                             fontSize: 18,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w500,
@@ -261,6 +283,7 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                       'Back To Sign In',
                       style: TextStyle(
                         color: Color(0xFF005D8C),
+                        fontFamily: 'poppins',
                         fontSize: 16,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w400,

@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:zynerd_app/views/ForgotPassword2.dart';
+import 'package:zynerd_app/views/ForgotPassword2.dart';
 import 'package:zynerd_app/views/Signin.dart';
 
 import 'SignUp.dart';
@@ -52,7 +53,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   Padding(
                     padding: EdgeInsets.only(right: 280),
                     child: Text(
-                      'Forgot Password, ',
+                      'Forgot Pasword, ',
+                      maxLines: 1,
+                      overflow: TextOverflow.visible,
+                      softWrap: false,
                       textAlign: TextAlign.left,
                       style: TextStyle(
                           fontSize: 20,
@@ -140,13 +144,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const ForgotPassword2()),
+                                builder: (context) => ForgotPassword2()),
                           );
                         },
                         child: Text(
                           'Send OTP',
                           textAlign: TextAlign.center,
                           style: TextStyle(
+                            fontFamily: 'poppins',
                             fontSize: 18,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w500,
@@ -169,6 +174,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     child: const Text(
                       'Back To Sign In',
                       style: TextStyle(
+                        fontFamily: 'poppins',
                         color: Color(0xFF005D8C),
                         fontFamily: 'Poppins',
                         fontSize: 16,
