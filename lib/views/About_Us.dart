@@ -96,7 +96,7 @@ class AboutUsState extends State<AboutUs> {
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w300,
-                          fontFamily: 'Lora',
+                          fontFamily: 'Poppins',
                           color: Colors.black45),
                     ),
                   ),
@@ -108,7 +108,7 @@ class AboutUsState extends State<AboutUs> {
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w300,
-                          fontFamily: 'Lora',
+                          fontFamily: 'Poppins',
                           color: Colors.black45),
                     ),
                   ),
@@ -120,7 +120,7 @@ class AboutUsState extends State<AboutUs> {
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w300,
-                          fontFamily: 'Lora',
+                          fontFamily: 'Poppins',
                           color: Colors.black45),
                     ),
                   ),
@@ -152,7 +152,7 @@ class AboutUsState extends State<AboutUs> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 16,
-                    fontFamily: 'Lora',
+                    fontFamily: 'Poppins',
                     fontWeight: FontWeight.w300,
                     color: Colors.black45),
               ),
@@ -179,7 +179,7 @@ class AboutUsState extends State<AboutUs> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w500,
-                  fontFamily: 'Lora-BoldItalic',
+                  fontFamily: 'Poppins',
                   color: Color(0xFFF85D05),
                 )
 
@@ -218,10 +218,10 @@ class AboutUsState extends State<AboutUs> {
                   "     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod. ",
                   textAlign: TextAlign.right,
                   style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w300,
-                    color: Colors.black,
-                  )),
+                      fontSize: 16,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w300,
+                      color: Color(0xFF767A7C))),
               SizedBox(
                 height: 5,
               ),
@@ -250,7 +250,7 @@ class AboutUsState extends State<AboutUs> {
                     fontSize: 14,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w300,
-                    color: Color(0xFF0C0C0C))),
+                    color: Color(0xFF767A7C))),
           ),
         ),
         Container(
@@ -275,7 +275,7 @@ class AboutUsState extends State<AboutUs> {
                     fontSize: 14,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w300,
-                    color: Color(0xFF0C0C0C))),
+                    color: Color(0xFF767A7C))),
           ),
         ),
         Container(
@@ -300,7 +300,7 @@ class AboutUsState extends State<AboutUs> {
                     fontSize: 14,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w300,
-                    color: Color(0xFF0C0C0C))),
+                    color: Color(0xFF767A7C))),
           ),
         ),
         SizedBox(
@@ -328,7 +328,7 @@ class AboutUsState extends State<AboutUs> {
                     fontSize: 16,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w300,
-                    color: Color(0xFF0C0C0C))),
+                    color: Color(0xFF767A7C))),
           ),
         ),
       ]),

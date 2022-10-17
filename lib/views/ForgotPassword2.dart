@@ -57,7 +57,7 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                           fontSize: 20,
                           color: Color(0xFFF85D05),
                           fontWeight: FontWeight.w400,
-                          fontFamily: 'Lora'),
+                          fontFamily: 'Poppins'),
                     ),
                   ),
                   SizedBox(
@@ -113,6 +113,7 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 18,
+                    fontFamily: 'Poppins',
                     color: Colors.black,
                     fontWeight: FontWeight.w400,
                   ),
@@ -149,6 +150,7 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 18,
+                    fontFamily: 'Poppins',
                     color: Colors.black,
                     fontWeight: FontWeight.w400,
                   ),
@@ -182,6 +184,7 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 18,
+                    fontFamily: 'Poppins',
                     color: Colors.black,
                     fontWeight: FontWeight.w400,
                   ),
@@ -236,6 +239,7 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 18,
+                            fontFamily: 'Poppins',
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -258,6 +262,7 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                       style: TextStyle(
                         color: Color(0xFF005D8C),
                         fontSize: 16,
+                        fontFamily: 'Poppins',
                         fontWeight: FontWeight.w400,
                       ),
                     ),

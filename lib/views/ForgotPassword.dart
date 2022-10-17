@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:zynerd_app/views/ForgotPassword2.dart';
 import 'package:zynerd_app/views/Signin.dart';
 
 import 'SignUp.dart';
@@ -57,7 +58,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           fontSize: 20,
                           color: Color(0xFFF85D05),
                           fontWeight: FontWeight.w400,
-                          fontFamily: 'Lora'),
+                          fontFamily: 'Poppins'),
                     ),
                   ),
                   SizedBox(
@@ -89,6 +90,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 18,
+                    fontFamily: 'Poppins',
                     color: Colors.black,
                     fontWeight: FontWeight.w400,
                   ),
@@ -109,7 +111,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               child: TextFormField(
                                   decoration: InputDecoration(
                                 border: InputBorder.none,
-                                labelText: 'Email',
+                                labelText: 'your email',
                                 contentPadding:
                                     EdgeInsets.symmetric(vertical: 7),
                               ))))),
@@ -135,13 +137,18 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 10) //content padding inside button
                             ),
                         onPressed: () {
-                          //code to execute when this button is pressed.
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ForgotPassword2()),
+                          );
                         },
                         child: Text(
                           'Send OTP',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 18,
+                            fontFamily: 'Poppins',
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -163,6 +170,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       'Back To Sign In',
                       style: TextStyle(
                         color: Color(0xFF005D8C),
+                        fontFamily: 'Poppins',
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       ),
