@@ -28,53 +28,53 @@ class _LandingState extends State<Landing> {
               leading: IconButton(
                 icon: Image.asset(
                   'assets/images/Landing/ZyNerd-Final-Logo.png',
-                  height: 25,
-                  width: 100,
+                  height: 30,
+                  width: 120,
                   fit: BoxFit.fill,
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const AboutUs()),
-                  );
-                },
+                onPressed: () {},
               ),
               leadingWidth: 200,
               actions: [
-                // OutlinedButton(
-                //   onPressed: () {
-                //     //Response
-                //   },
-                //   child: Text('Sign In /Sign Up'),
-                // ),
-
+                OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                      foregroundColor: Colors.black,
+                      side: BorderSide(color: Colors.black, width: 1),
+                      // elevation: 20,
+                      // maximumSize: Size(100,50),
+                      padding:
+                          EdgeInsets.symmetric(vertical: 4, horizontal: 10)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Signin()),
+                    );
+                  },
+                  child: Text("Sign In / Sign Up"),
+                ),
                 PopupMenuButton(
-                  child: Icon(
-                    Icons.menu_sharp,
-                    color: Colors.blue[900],
-                  ),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(15.0))),
                   itemBuilder: (context) => [
-                    PopupMenuItem(
-                      child: Text("How it works"),
+                    const PopupMenuItem(
                       value: 0,
+                      child: Text("How it works"),
                     ),
-                    PopupMenuItem(
-                      child: Text("Why Trust ZyNerd"),
+                    const PopupMenuItem(
                       value: 1,
+                      child: Text("Why Trust ZyNerd"),
                     ),
-                    PopupMenuItem(
-                      child: new Text("About Us"),
+                    const PopupMenuItem(
                       value: 2,
+                      child: Text("About Us"),
                     ),
-                    PopupMenuItem(
-                      child: Text("Subscriptions"),
+                    const PopupMenuItem(
                       value: 3,
+                      child: Text("Subscriptions"),
                     ),
-                    PopupMenuItem(
-                      child: Text("Contact Us"),
+                    const PopupMenuItem(
                       value: 4,
+                      child: Text("Contact Us"),
                     ),
                   ],
                   onSelected: (result) {
@@ -97,10 +97,10 @@ class _LandingState extends State<Landing> {
                         MaterialPageRoute(builder: (context) => AboutUs()),
                       );
                     }
-                    if (result == 2) {
+                    if (result == 3) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AboutUs()),
+                        MaterialPageRoute(builder: (context) => SubPolicy()),
                       );
                     }
                     if (result == 4) {
@@ -110,6 +110,10 @@ class _LandingState extends State<Landing> {
                       );
                     }
                   },
+                  child: Icon(
+                    Icons.menu_sharp,
+                    color: Colors.blue[900],
+                  ),
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12),
@@ -150,14 +154,32 @@ class _LandingState extends State<Landing> {
                             fontWeight: FontWeight.w800,
                             fontFamily: 'Lora'),
                       ),
-                      const Text(
-                        ' Career Choices!',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 36,
-                            color: Colors.orange,
-                            fontWeight: FontWeight.w800,
-                            fontFamily: 'Lora'),
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            height: 40,
+                            width: 350,
+                            margin: EdgeInsets.all(0),
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/images/Landing/choice.png'),
+                                  fit: BoxFit.fill),
+                            ),
+                          ),
+                          const Text(
+                            'career choices !',
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                                //  height: 0,
+                                fontSize: 36,
+                                color: Color(0xFFF85D05),
+                                //  overflow: TextOverflow.fade,
+                                fontWeight: FontWeight.w800,
+                                fontFamily: 'Lora'),
+                          ),
+                        ],
                       ),
                       const SizedBox(
                         height: 10,
@@ -174,13 +196,9 @@ class _LandingState extends State<Landing> {
                         ),
                       ),
                       const SizedBox(
-                        height: 25,
+                        height: 15,
                       ),
                       ElevatedButton(
-                        child: Text(
-                          "Sign Up Now".toUpperCase(),
-                          style: TextStyle(fontSize: 15),
-                        ),
                         style: ButtonStyle(
                             foregroundColor:
                                 MaterialStateProperty.all<Color>(Colors.white),
@@ -201,6 +219,13 @@ class _LandingState extends State<Landing> {
                                 builder: (context) => const Signin()),
                           );
                         },
+                        child: Text(
+                          "Sign Up Now".toUpperCase(),
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15,
                       ),
                       Container(
                         height: 480,
@@ -212,7 +237,7 @@ class _LandingState extends State<Landing> {
                               alignment: Alignment.bottomCenter),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                           height: 100,
                           // margin: EdgeInsets.all(14.0),
 
@@ -299,12 +324,12 @@ class _LandingState extends State<Landing> {
                                 mainAxisAlignment: MainAxisAlignment
                                     .end, // posion the everything to the bottom
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
+                                children: const [
                                   CircleAvatar(
                                     radius: 20,
                                     child: CircleAvatar(
                                       backgroundImage: AssetImage(
-                                          "assets/images/Landing/scope.png"), //NetworkImage
+                                          "assets/images/Landing/scope.png"),
                                       radius: 20,
                                     ),
                                   ),
@@ -346,7 +371,7 @@ class _LandingState extends State<Landing> {
                                     .end, // posion the everything to the bottom
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  new Image.asset(
+                                  Image.asset(
                                     "assets/images/Landing/info.png",
                                     width: 40,
                                     height: 40,
@@ -397,7 +422,7 @@ class _LandingState extends State<Landing> {
                                     .end, // posion the everything to the bottom
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  new SvgPicture.asset(
+                                  SvgPicture.asset(
                                     "assets/images/Landing/artistic.svg",
                                     width: 40,
                                     height: 40,
@@ -441,7 +466,7 @@ class _LandingState extends State<Landing> {
                                     .end, // posion the everything to the bottom
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  new Image.asset(
+                                  Image.asset(
                                     "assets/images/Landing/personalize.png",
                                     width: 40,
                                     height: 40,
@@ -492,13 +517,13 @@ class _LandingState extends State<Landing> {
                                     .end, // posion the everything to the bottom
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  new Image.asset(
+                                  Image.asset(
                                     "assets/images/Landing/responsible.png",
                                     width: 40,
                                     height: 40,
                                     fit: BoxFit.cover,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   Text("Fully Responsible",
@@ -563,14 +588,14 @@ class _LandingState extends State<Landing> {
                       const SizedBox(
                         height: 20,
                       ),
-                      Container(
+                      SizedBox(
                         width: 330,
                         child: Row(
                           children: [
                             Container(
                               child: Column(
                                 children: [
-                                  new Image.asset(
+                                  Image.asset(
                                     "assets/images/Landing/lft.png",
                                     width: 40,
                                     height: 40,
@@ -579,11 +604,11 @@ class _LandingState extends State<Landing> {
                                 ],
                               ),
                             ),
-                            Container(
+                            SizedBox(
                               width: 80,
                               child: Column(
                                 children: [
-                                  new Image.asset(
+                                  Image.asset(
                                     "assets/images/Landing/rt.png",
                                     width: 40,
                                     height: 40,
@@ -595,7 +620,7 @@ class _LandingState extends State<Landing> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       const Text(
@@ -608,21 +633,52 @@ class _LandingState extends State<Landing> {
                       ),
                       Row(
                         children: [
-                          TextButton(
-                            onPressed: () {},
-                            child: const Text('ALL'),
+                          SizedBox(
+                            width: 40,
                           ),
                           TextButton(
                             onPressed: () {},
-                            child: const Text('MEDICAL'),
+                            child: const Text(
+                              'ALL',
+                              style: TextStyle(
+                                color: Color(0xFF767A7C),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ),
                           TextButton(
                             onPressed: () {},
-                            child: const Text('ENGINEERING'),
+                            child: const Text(
+                              'MEDICAL',
+                              style: TextStyle(
+                                color: Color(0xFF767A7C),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ),
                           TextButton(
                             onPressed: () {},
-                            child: const Text('ART'),
+                            child: const Text(
+                              'ENGINEERING',
+                              style: TextStyle(
+                                color: Color(0xFF767A7C),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              'ART',
+                              style: TextStyle(
+                                color: Color(0xFF767A7C),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -691,14 +747,14 @@ class _LandingState extends State<Landing> {
                       const SizedBox(
                         height: 20,
                       ),
-                      Container(
+                      SizedBox(
                         width: 130,
                         child: Row(
                           children: [
                             Center(
                               child: Column(
                                 children: [
-                                  new Image.asset(
+                                  Image.asset(
                                     "assets/images/Landing/Group.png",
                                     width: 40,
                                     height: 40,
@@ -710,10 +766,10 @@ class _LandingState extends State<Landing> {
                             Spacer(
                               flex: 3,
                             ),
-                            Container(
+                            SizedBox(
                               width: 80,
                               child: Column(
-                                children: [
+                                children: const [
                                   Text(
                                     '7+',
                                     textAlign: TextAlign.center,
@@ -740,14 +796,14 @@ class _LandingState extends State<Landing> {
                       const SizedBox(
                         height: 20,
                       ),
-                      new Container(
+                      SizedBox(
                         width: 130,
                         child: Row(
                           children: [
                             Center(
                               child: Column(
                                 children: [
-                                  new Image.asset(
+                                  Image.asset(
                                     "assets/images/Landing/Graduate.png",
                                     width: 40,
                                     height: 40,
@@ -759,10 +815,10 @@ class _LandingState extends State<Landing> {
                             Spacer(
                               flex: 3,
                             ),
-                            Container(
+                            SizedBox(
                               width: 80,
                               child: Column(
-                                children: [
+                                children: const [
                                   Text(
                                     '7812',
                                     textAlign: TextAlign.center,
@@ -789,14 +845,14 @@ class _LandingState extends State<Landing> {
                       const SizedBox(
                         height: 20,
                       ),
-                      new Container(
+                      SizedBox(
                         width: 130,
                         child: Row(
                           children: [
                             Center(
                               child: Column(
                                 children: [
-                                  new Image.asset(
+                                  Image.asset(
                                     "assets/images/Landing/Target.png",
                                     width: 40,
                                     height: 40,
@@ -808,10 +864,10 @@ class _LandingState extends State<Landing> {
                             Spacer(
                               flex: 3,
                             ),
-                            Container(
+                            SizedBox(
                               width: 80,
                               child: Column(
-                                children: [
+                                children: const [
                                   Text(
                                     '22,512',
                                     textAlign: TextAlign.center,
@@ -841,14 +897,14 @@ class _LandingState extends State<Landing> {
                       const SizedBox(
                         height: 20,
                       ),
-                      new Container(
+                      SizedBox(
                         width: 130,
                         child: Row(
                           children: [
                             Center(
                               child: Column(
                                 children: [
-                                  new Image.asset(
+                                  Image.asset(
                                     "assets/images/Landing/message.png",
                                     width: 40,
                                     height: 40,
@@ -860,10 +916,10 @@ class _LandingState extends State<Landing> {
                             Spacer(
                               flex: 3,
                             ),
-                            Container(
+                            SizedBox(
                               width: 80,
                               child: Column(
-                                children: [
+                                children: const [
                                   Text(
                                     '5,213',
                                     textAlign: TextAlign.center,
