@@ -32,6 +32,7 @@ dependencies:
   
   flutter:
     sdk: flutter
+    
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -39,6 +40,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.5
   flutter_svg: ^1.1.5
+  footer:
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +89,11 @@ flutter:
         - asset: assets/fonts/Lora-Italic.ttf
           style: italic
 
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Medium.ttf
+        - asset: assets/fonts/Poppins-Regular.ttf
+         
     # - family: Lora_Bold
     #   fonts:
     #     - asset: fonts/Lora-Bold.ttf
@@ -102,6 +109,7 @@ flutter:
     - assets/images/ #assets subfolder all files indexing
     - assets/images/Landing/ #assets subfolder all files indexing
     - assets/images/ContactUs/
+    - assets/images/Footer/
   #   - images/a_dot_ham.jpeg
 # flutter:
 

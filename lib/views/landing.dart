@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zynerd_app/views/About_Us.dart';
+import 'package:zynerd_app/views/Footer.dart';
 import 'package:zynerd_app/views/Signin.dart';
 import 'package:zynerd_app/views/contact_us.dart';
 import 'package:zynerd_app/views/subscription_policy.dart';
@@ -77,10 +78,17 @@ class _LandingState extends State<Landing> {
                     ),
                   ],
                   onSelected: (result) {
-                    if (result == 2) {
+                    if (result == 0) {
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(builder: (context) => How it works()
+                      //     ),
+                      // );
+                    }
+                    if (result == 1) {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => AboutUs()),
+                          context,
+                          MaterialPageRoute(builder: (context) => FooterPage()),
                       );
                     }
                     if (result == 2) {
