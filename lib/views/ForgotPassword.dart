@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:zynerd_app/views/ForgotPassword2.dart';
+import 'package:zynerd_app/views/ForgotPassword2.dart';
 import 'package:zynerd_app/views/Signin.dart';
 
 import 'SignUp.dart';
@@ -61,7 +62,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           fontSize: 20,
                           color: Color(0xFFF85D05),
                           fontWeight: FontWeight.w400,
-                          fontFamily: 'Lora'),
+                          fontFamily: 'Poppins'),
                     ),
                   ),
                   SizedBox(
@@ -93,7 +94,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 18,
-                    fontFamily: 'poppins',
+                    fontFamily: 'Poppins',
                     color: Colors.black,
                     fontWeight: FontWeight.w400,
                   ),
@@ -114,7 +115,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               child: TextFormField(
                                   decoration: InputDecoration(
                                 border: InputBorder.none,
-                                labelText: 'Email',
+                                labelText: 'your email',
                                 contentPadding:
                                     EdgeInsets.symmetric(vertical: 7),
                               ))))),
@@ -152,6 +153,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           style: TextStyle(
                             fontFamily: 'poppins',
                             fontSize: 18,
+                            fontFamily: 'Poppins',
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -174,6 +176,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       style: TextStyle(
                         fontFamily: 'poppins',
                         color: Color(0xFF005D8C),
+                        fontFamily: 'Poppins',
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       ),
