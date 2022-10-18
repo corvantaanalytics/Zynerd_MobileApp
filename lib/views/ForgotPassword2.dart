@@ -53,14 +53,11 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                     child: Text(
                       'Forgot Password, ',
                       textAlign: TextAlign.left,
-                      maxLines: 1,
-                      overflow: TextOverflow.visible,
-                      softWrap: false,
                       style: TextStyle(
                           fontSize: 20,
                           color: Color(0xFFF85D05),
                           fontWeight: FontWeight.w400,
-                          fontFamily: 'Poppins'),
+                          fontFamily: 'Lora'),
                     ),
                   ),
                   SizedBox(
@@ -85,9 +82,6 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                     child: Text(
                       'We have sent the verification code to your email',
                       textAlign: TextAlign.center,
-                      maxLines: 1,
-                      overflow: TextOverflow.visible,
-                      softWrap: false,
                       style: TextStyle(
                           fontSize: 14,
                           fontFamily: 'Poppins',
@@ -100,9 +94,6 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                     child: Text(
                       'abc@zynerd.com',
                       textAlign: TextAlign.center,
-                      maxLines: 1,
-                      overflow: TextOverflow.visible,
-                      softWrap: false,
                       style: TextStyle(
                           fontSize: 14,
                           fontFamily: 'Poppins',
@@ -122,7 +113,6 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 18,
-                    fontFamily: 'Poppins',
                     color: Colors.black,
                     fontWeight: FontWeight.w400,
                   ),
@@ -153,16 +143,12 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                 height: 10,
               ),
               Padding(
-                padding: EdgeInsets.only(right: 210),
+                padding: EdgeInsets.only(right: 290),
                 child: Text(
                   'New Password ',
                   textAlign: TextAlign.left,
-                  maxLines: 1,
-                  overflow: TextOverflow.visible,
-                  softWrap: false,
                   style: TextStyle(
                     fontSize: 18,
-                    fontFamily: 'Poppins',
                     color: Colors.black,
                     fontWeight: FontWeight.w400,
                   ),
@@ -190,16 +176,12 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(right: 200),
+                padding: EdgeInsets.only(right: 290),
                 child: Text(
                   'Confirm Password',
-                  maxLines: 1,
-                  overflow: TextOverflow.visible,
-                  softWrap: false,
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 18,
-                    fontFamily: 'Poppins',
                     color: Colors.black,
                     fontWeight: FontWeight.w400,
                   ),
@@ -225,9 +207,6 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                                     EdgeInsets.symmetric(vertical: 7),
                               ))))),
                 ],
-              ),
-              SizedBox(
-                height: 20,
               ),
               Center(
                   child: SizedBox(
@@ -257,7 +236,6 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 18,
-                            fontFamily: 'Poppins',
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -280,7 +258,6 @@ class _ForgotPassword2State extends State<ForgotPassword2> {
                       style: TextStyle(
                         color: Color(0xFF005D8C),
                         fontSize: 16,
-                        fontFamily: 'Poppins',
                         fontWeight: FontWeight.w400,
                       ),
                     ),
