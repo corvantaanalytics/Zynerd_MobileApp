@@ -42,7 +42,7 @@ dependencies:
   flutter_svg: ^1.1.5
   carousel_slider: ^2.3.1
   smooth_star_rating: ^1.0.4+2
-   
+
   footer:
   flutter_rating_bar: ^4.0.1
 
@@ -114,6 +114,7 @@ flutter:
     - assets/images/Landing/ #assets subfolder all files indexing
     - assets/images/ContactUs/
     - assets/images/Footer/
+    - assets/images/Dashboard/
   #   - images/a_dot_ham.jpeg
 # flutter:
 

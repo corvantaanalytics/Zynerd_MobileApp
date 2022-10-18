@@ -100,7 +100,7 @@ class _SubPolicyState extends State<SubPolicy>
             children: [
               Container(
                 padding: EdgeInsets.all(16),
-                height: 600,
+                // height: 600,
                 // margin: EdgeInsets.all(14.0),
                 decoration: const BoxDecoration(
                   image: DecorationImage(
@@ -115,7 +115,7 @@ class _SubPolicyState extends State<SubPolicy>
                       style: TextStyle(
                           fontSize: 36,
                           fontWeight: FontWeight.w700,
-                          fontFamily: 'Lora'),
+                          fontFamily: 'poppins'),
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 20, right: 20),
@@ -148,6 +148,7 @@ class _SubPolicyState extends State<SubPolicy>
                               'Subscription Plans and Refund Policy',
                               textAlign: TextAlign.center,
                               style: TextStyle(
+                                fontFamily: 'poppins',
                                   fontSize: 12, fontWeight: FontWeight.w400),
                             ),
                           ),
@@ -156,6 +157,7 @@ class _SubPolicyState extends State<SubPolicy>
                               'Additional terms',
                               textAlign: TextAlign.center,
                               style: TextStyle(
+                                    fontFamily: 'poppins',
                                   fontSize: 12, fontWeight: FontWeight.w400),
                             ),
                           ),
@@ -164,6 +166,7 @@ class _SubPolicyState extends State<SubPolicy>
                               'Refund of Voluntary Contributions',
                               textAlign: TextAlign.center,
                               style: TextStyle(
+                                    fontFamily: 'poppins',
                                   fontSize: 12, fontWeight: FontWeight.w400),
                             ),
                           ),
@@ -573,7 +576,7 @@ class _SubPolicyState extends State<SubPolicy>
                                         fontFamily: 'Poppins',
                                         fontWeight: FontWeight.w300,
                                         height: 1.6),
-                                  ),
+                                  ), 
                                 ],
                               ),
                             )),

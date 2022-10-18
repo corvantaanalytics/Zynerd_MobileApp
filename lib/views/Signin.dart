@@ -1,6 +1,7 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:zynerd_app/views/Dashboard.dart';
 import 'package:zynerd_app/views/ForgotPassword.dart';
 import 'package:zynerd_app/views/SignUp.dart';
 
@@ -209,9 +210,12 @@ class  _SigninState  extends State<Signin> {
                   ),
                   padding: EdgeInsets.all(10) //content padding inside button
                 ),
-                onPressed: (){ 
-                    //code to execute when this button is pressed.
-                }, 
+                  onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Dashboard()),
+            );
+          },
                 child: Text(
                                   'Sign in',
                                   textAlign: TextAlign.center,
