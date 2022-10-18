@@ -56,14 +56,6 @@ class _LandingState extends State<Landing> {
                 borderRadius: BorderRadius.all(Radius.circular(15.0))),
             itemBuilder: (context) => [
               const PopupMenuItem(
-                value: 0,
-                child: Text("How it works"),
-              ),
-              const PopupMenuItem(
-                value: 1,
-                child: Text("Why Trust ZyNerd"),
-              ),
-              const PopupMenuItem(
                 value: 2,
                 child: Text("About Us"),
               ),
@@ -168,7 +160,7 @@ class _LandingState extends State<Landing> {
                         ),
                       ),
                       const Text(
-                        'career choices !',
+                        'Career Choices !',
                         textAlign: TextAlign.right,
                         style: TextStyle(
                             //  height: 0,
@@ -398,7 +390,7 @@ class _LandingState extends State<Landing> {
                               SizedBox(
                                 height: 5,
                               ),
-                              Text("information",
+                              Text("Information",
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontFamily: 'poppins',
