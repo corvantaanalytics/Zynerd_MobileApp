@@ -36,21 +36,43 @@ class _LandingState extends State<Landing> {
         ),
         leadingWidth: 200,
         actions: [
-          OutlinedButton(
-            style: OutlinedButton.styleFrom(
-                foregroundColor: Colors.black,
-                side: BorderSide(color: Colors.black, width: 1),
-                // elevation: 20,
-                // maximumSize: Size(100,50),
-                padding: EdgeInsets.symmetric(vertical: 4, horizontal: 10)),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Signin()),
-              );
-            },
-            child: Text("Sign In / Sign Up"),
-          ),
+        Center(
+                    child: SizedBox(
+                        height: 45, //height of button
+                        width: 140, //width of button
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            side: BorderSide(width: 1.0, color: Colors.black,),
+                              primary: Colors.white, //background color of button
+                              // side: BorderSide(width:3), //border width and color
+                              // elevation: 3, //elevation of button
+                              shape: RoundedRectangleBorder(
+                                  //to set border radius to button
+                                  borderRadius: BorderRadius.circular(10)),
+                              padding: EdgeInsets.all(
+                                  10) //content padding inside button
+                              ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Signin()),
+                            );
+                          },
+                          child: Text(
+                            'Sign in/Sign up',
+                             textAlign: TextAlign.center,
+                            style: TextStyle(
+                               color: Colors.black,
+                              fontFamily: 'poppins',
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ))),
+                      SizedBox(
+                    width: 20,
+                  ),
           PopupMenuButton(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(15.0))),
