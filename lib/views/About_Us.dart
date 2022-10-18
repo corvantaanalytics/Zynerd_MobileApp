@@ -59,8 +59,6 @@ class AboutUsState extends State<AboutUs> {
       ),
       body: ListView(children: [
         Container(
-            // height: 100,
-            // margin: EdgeInsets.all(14.0),
             decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage('assets/images/Landing/Rectangle.png'),
@@ -77,9 +75,9 @@ class AboutUsState extends State<AboutUs> {
                         fontWeight: FontWeight.w700,
                         fontFamily: 'Lora'),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  // SizedBox(
+                  //   height: 10,
+                  // ),
                   Text(
                     'career counselling',
                     textAlign: TextAlign.center,
@@ -126,8 +124,6 @@ class AboutUsState extends State<AboutUs> {
                   ),
                 ])),
         Container(
-
-            // margin: EdgeInsets.all(14.0),
             child: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
@@ -172,7 +168,6 @@ class AboutUsState extends State<AboutUs> {
         ),
         Container(
             child: Column(
-          // ignore: prefer_const_literals_to_create_immutables
           children: [
             Text('WHY WE ARE INTO THIS',
                 textAlign: TextAlign.center,
@@ -181,10 +176,7 @@ class AboutUsState extends State<AboutUs> {
                   fontWeight: FontWeight.w500,
                   fontFamily: 'Poppins',
                   color: Color(0xFFF85D05),
-                )
-
-                // color: Color.fromARGB(255, 185, 121, 25)),
-                ),
+                )),
             Padding(
               padding: EdgeInsets.only(left: 8, right: 8),
               child: Text(
@@ -203,96 +195,100 @@ class AboutUsState extends State<AboutUs> {
           height: 20,
         ),
         Container(
+          width: 330,
           child: Row(
             children: [
-              new Image.asset(
-                "assets/images/Landing/shape-13-05.png",
-                width: 55.26,
-                height: 60,
-                fit: BoxFit.fill,
+              Center(
+                child: Column(
+                  children: [
+                    Padding(padding: EdgeInsets.only(left: 100)),
+                    new Image.asset(
+                      "assets/images/Landing/shape-13-05.png",
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
-                height: 10,
+                width: 25,
               ),
-              Text(
-                  "     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod. ",
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w300,
-                      color: Color(0xFF767A7C))),
-              SizedBox(
-                height: 5,
+              Container(
+                width: 80,
+                child: Column(
+                  children: [
+                    Padding(padding: EdgeInsets.only(top: 1)),
+                    Text(
+                      'Lorem ipsum dolor sit amet,',
+                      maxLines: 1,
+                      overflow: TextOverflow.visible,
+                      softWrap: false,
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                          color: Color(0xFF0C0C0C)),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 1)),
+                    Text(
+                      'consectetur adipiscing elit.',
+                      maxLines: 1,
+                      overflow: TextOverflow.visible,
+                      softWrap: false,
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                          color: Color(0xFF0C0C0C)),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 1)),
+                    Text(
+                      'Mauris nulla at nunc diam id',
+                      maxLines: 1,
+                      overflow: TextOverflow.visible,
+                      softWrap: false,
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                          color: Color(0xFF0C0C0C)),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 1)),
+                    Text(
+                      'eget dui euismod.',
+                      maxLines: 1,
+                      overflow: TextOverflow.visible,
+                      softWrap: false,
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 16,
+                          color: Color(0xFF0C0C0C)),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
         ),
-        Container(
-          child: Container(
-            height: 50,
-            child: Text("01.Lorem ipsum dolor sit amet",
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF0C0C0C))),
-          ),
+        SizedBox(
+          height: 18,
         ),
         Container(
-          child: Container(
-            height: 50,
-            child: Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod.",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 14,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w300,
-                    color: Color(0xFF767A7C))),
-          ),
-        ),
-        Container(
-          child: Container(
-            height: 50,
-            child: Text("01.Lorem ipsum dolor sit amet",
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF0C0C0C))),
-          ),
-        ),
-        Container(
-          child: Container(
-            height: 50,
-            child: Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod.",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 14,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w300,
-                    color: Color(0xFF767A7C))),
-          ),
-        ),
-        Container(
-          child: Container(
-            height: 50,
-            child: Text("01.Lorem ipsum dolor sit amet",
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF0C0C0C))),
-          ),
-        ),
-        Container(
+          padding: EdgeInsets.only(left: 10),
           child: Container(
             height: 30,
+            child: Text(" 01.Lorem ipsum dolor sit amet",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    fontSize: 20,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF0C0C0C))),
+          ),
+        ),
+        Container(
+          child: Container(
+            height: 50,
             child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod.",
                 textAlign: TextAlign.center,
@@ -303,8 +299,57 @@ class AboutUsState extends State<AboutUs> {
                     color: Color(0xFF767A7C))),
           ),
         ),
-        SizedBox(
-          height: 20,
+        Container(
+          padding: EdgeInsets.only(left: 15),
+          child: Container(
+            height: 30,
+            child: Text("02.Lorem ipsum dolor sit amet",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    fontSize: 20,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF0C0C0C))),
+          ),
+        ),
+        Container(
+          child: Container(
+            height: 50,
+            child: Text(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w300,
+                    color: Color(0xFF767A7C))),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.only(left: 15),
+          child: Container(
+            height: 30,
+            child: Text("03.Lorem ipsum dolor sit amet",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    fontSize: 20,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF0C0C0C))),
+          ),
+        ),
+        Container(
+          child: Container(
+            height: 50,
+            child: Text(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w300,
+                    color: Color(0xFF767A7C))),
+          ),
         ),
         Container(
           child: Container(
