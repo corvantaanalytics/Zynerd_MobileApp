@@ -48,7 +48,7 @@ class _LandingState extends State<Landing> {
                               // elevation: 3, //elevation of button
                               shape: RoundedRectangleBorder(
                                   //to set border radius to button
-                                  borderRadius: BorderRadius.circular(10)),
+                                  borderRadius: BorderRadius.circular(5)),
                               padding: EdgeInsets.all(
                                   10) //content padding inside button
                               ),
@@ -589,7 +589,9 @@ class _LandingState extends State<Landing> {
                   SizedBox(
                     height: 10,
                   ),
-                  const Text(
+                    Padding(
+                     padding: EdgeInsets.all(10),
+                         child:const Text(
                     'Testimonial from ZyNerd Student?',
                     textAlign: TextAlign.left,
                     style: TextStyle(
@@ -597,6 +599,7 @@ class _LandingState extends State<Landing> {
                         fontWeight: FontWeight.w700,
                         fontFamily: 'Lora'),
                   ),
+                    ),
                   const SizedBox(
                     height: 20,
                   ),
