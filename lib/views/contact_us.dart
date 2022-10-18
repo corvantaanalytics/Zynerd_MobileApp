@@ -71,10 +71,10 @@ class _ContactUsState extends State<ContactUs> {
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 20, right: 150),
+                    padding: EdgeInsets.only(right: 110),
                     child: Text(
                       'Have Some Questions?',
                       textAlign: TextAlign.left,
@@ -89,7 +89,7 @@ class _ContactUsState extends State<ContactUs> {
                     height: 10,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 10, right: 35),
+                    padding: EdgeInsets.only(left: 15),
                     child: Text(
                       'Lorem ipsum dolor sit amet, consectetur adipiscing',
                       textAlign: TextAlign.left,
@@ -102,7 +102,7 @@ class _ContactUsState extends State<ContactUs> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: 190),
+                    padding: EdgeInsets.only(right: 175),
                     child: Text(
                       ' elit. Magna diam ultricies',
                       textAlign: TextAlign.left,
@@ -115,7 +115,7 @@ class _ContactUsState extends State<ContactUs> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: 270),
+                    padding: EdgeInsets.only(right: 265),
                     child: Text(
                       'sollicitudin.',
                       textAlign: TextAlign.left,
@@ -171,10 +171,11 @@ class _ContactUsState extends State<ContactUs> {
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Container(
                     width: 330,
+                    // height: 5,
                     child: Row(
                       children: [
                         Center(
@@ -207,7 +208,7 @@ class _ContactUsState extends State<ContactUs> {
                     ),
                   ),
                   SizedBox(
-                    height: 25,
+                    height: 15,
                   ),
                   Row(
                     children: [
