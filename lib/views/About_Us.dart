@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:zynerd_app/views/Signin.dart';
+import "package:zynerd_app/views/landing.dart";
 import 'package:zynerd_app/views/contact_us.dart';
 
 class AboutUs extends StatefulWidget {
@@ -352,8 +355,10 @@ class AboutUsState extends State<AboutUs> {
           ),
         ),
         Container(
+          padding: EdgeInsets.only(left: 15),
           child: Container(
-            height: 50,
+            height: 41,
+            width: 126,
             child: Text("Purpose",
                 textAlign: TextAlign.left,
                 style: TextStyle(
@@ -364,11 +369,12 @@ class AboutUsState extends State<AboutUs> {
           ),
         ),
         Container(
+          padding: EdgeInsets.only(left: 15),
           child: Container(
             height: 60,
             child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla at nunc diam id eget dui euismod. Et dignissim cursus ultricies id nunc est placerat sed. Feugiat elit pretium posuere interdum aenean auctor rhoncus odio curabitur. In euismod ultricies magna metus ut pretium malesuada aliquet. Eget nunc enim mus lectus maecenas nibh volutpat. Diam in blandit enim at diam accumsan in. Dolor elementum tristique quis et proin. In sit tempus ut.",
-                textAlign: TextAlign.center,
+                // textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Poppins',
