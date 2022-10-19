@@ -45,6 +45,7 @@ dependencies:
 
   footer:
   flutter_rating_bar: ^4.0.1
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -113,6 +114,7 @@ flutter:
     - assets/images/ #assets subfolder all files indexing
     - assets/images/Landing/ #assets subfolder all files indexing
     - assets/images/ContactUs/
+    - assets/images/Login/
     - assets/images/Footer/
     - assets/images/Dashboard/
   #   - images/a_dot_ham.jpeg
