@@ -32,7 +32,12 @@ class _LandingState extends State<Landing> {
             width: 120,
             fit: BoxFit.fill,
           ),
-          onPressed: () {},
+        onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Signin()),
+                      );
+                    },
         ),
         leadingWidth: 200,
         actions: [
