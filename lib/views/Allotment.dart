@@ -257,7 +257,7 @@ class _AllotmentState extends State<Allotments> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 15, right: 15),
+                        padding: EdgeInsets.only(left: 20, right: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
