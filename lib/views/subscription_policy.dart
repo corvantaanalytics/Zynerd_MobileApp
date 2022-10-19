@@ -9,31 +9,8 @@ class SubPolicy extends StatefulWidget {
   _SubPolicyState createState() => _SubPolicyState();
 }
 
-// class _SubPolicyState extends State<SubPolicy>
-//     with SingleTickerProviderStateMixin {
-//   TabController _tabController;
-//   @override
-//   void initState() {
-//     _tabController = new TabController(length: 2, vsync: this);
-//     super.initState();
-//   }
-// }
-
-void _pushMenu() {
-  // return Scaffold(
-  //   appBar: AppBar(title: Text('Menu')),
-  // );
-}
-
 class _SubPolicyState extends State<SubPolicy>
     with SingleTickerProviderStateMixin {
-  // TabController _tabController;
-  // @override
-  // void initState() {
-  //   _tabController = new TabController(length: 2, vsync: this);
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,7 +81,7 @@ class _SubPolicyState extends State<SubPolicy>
                 // margin: EdgeInsets.all(14.0),
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/images/Landing/Rectangle.png'),
+                      image: AssetImage('assets/images/background.png'),
                       fit: BoxFit.fill),
                 ),
                 child: Column(
