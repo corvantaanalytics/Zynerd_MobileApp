@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:zynerd_app/views/AllotmentMapping.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ class _DashboardState extends State<Dashboard> {
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFF8F8F8),
+          backgroundColor: Color(0xFFF8F8F8),
         
         leading: IconButton(
           
@@ -38,7 +39,12 @@ class _DashboardState extends State<Dashboard> {
             width: 100,
             fit: BoxFit.fill,
           ),
-          onPressed: () {},
+         onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const AllotmentsMapping()),
+                      );
+                    },
         ),
         
         leadingWidth: 200,
@@ -453,7 +459,9 @@ class _DashboardState extends State<Dashboard> {
               color: Colors.white, // background color of the cards
               borderRadius: BorderRadius.all(Radius.circular(20.0)),
             ),
-            child: Container(
+            child:Column(
+              children: [
+Container(
               // height: 404,
               //  width: 350, // minus 32 due to the margin
               margin: EdgeInsets.all(16.0),
@@ -479,7 +487,7 @@ class _DashboardState extends State<Dashboard> {
                     height: 10,
                   ),
                   const Text(
-                    'Under Graduation - Medicine (MBBS & BDS',
+                    'Under Graduation - Medicine (MBBS & BDS)',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         //  height: 0,
@@ -604,31 +612,46 @@ class _DashboardState extends State<Dashboard> {
                 ],
               ),
             ),
+             Padding(
+                    padding: EdgeInsets.only(right: 130),
+                    child: Text(
+                      'ZyNerd Aspire',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontSize: 25,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xFF005D8C)),
+                    ),
+                  ),
+             Container(
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                     children: str.map((strone){
+                         return Row(
+                            children:[
+                              Text("\u2022", style: TextStyle(fontSize: 30,color: Color.fromARGB(255, 117, 169, 195),),), //bullet text
+                              SizedBox(width: 10,), //space between bullet and text
+                              Expanded(
+                                child:Text(strone, style:TextStyle(
+                      //  height: 0,
+                      fontSize: 14,
+                      color: Color(0XFF767A7C),
+                      //  overflow: TextOverflow.fade,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'poppins'),), //text
+                              )
+                            ]
+                         );
+                     }).toList(),
+                  ),
+                ),
+              ],
+            ),
+             
 
-            //  child: Container(
-            //       padding: EdgeInsets.all(20),
-            //       child: Column(
-            //          children: str.map((strone){
-            //              return Row(
-            //                 children:[
-            //                   Text("\u2022", style: TextStyle(fontSize: 30),), //bullet text
-            //                   SizedBox(width: 10,), //space between bullet and text
-            //                   Expanded(
-            //                     child:Text(strone, style:TextStyle(
-            //           //  height: 0,
-            //           fontSize: 14,
-            //           color: Colors.black,
-            //           //  overflow: TextOverflow.fade,
-            //           fontWeight: FontWeight.w400,
-            //           fontFamily: 'poppins'),), //text
-            //                   )
-            //                 ]
-            //              );
-            //          }).toList(),
-            //       ),
-            //     ),
           ),
-           Container(
+          Container(
             // height: 722,
             // width: 315, // minus 32 due to the margin
             margin: EdgeInsets.all(16.0),
@@ -637,7 +660,9 @@ class _DashboardState extends State<Dashboard> {
               color: Colors.white, // background color of the cards
               borderRadius: BorderRadius.all(Radius.circular(20.0)),
             ),
-            child: Container(
+            child:Column(
+              children: [
+                Container(
               // height: 404,
               //  width: 350, // minus 32 due to the margin
               margin: EdgeInsets.all(16.0),
@@ -788,29 +813,46 @@ class _DashboardState extends State<Dashboard> {
                 ],
               ),
             ),
-
-            //  child: Container(
-            //       padding: EdgeInsets.all(20),
-            //       child: Column(
-            //          children: str.map((strone){
-            //              return Row(
-            //                 children:[
-            //                   Text("\u2022", style: TextStyle(fontSize: 30),), //bullet text
-            //                   SizedBox(width: 10,), //space between bullet and text
-            //                   Expanded(
-            //                     child:Text(strone, style:TextStyle(
-            //           //  height: 0,
-            //           fontSize: 14,
-            //           color: Colors.black,
-            //           //  overflow: TextOverflow.fade,
-            //           fontWeight: FontWeight.w400,
-            //           fontFamily: 'poppins'),), //text
-            //                   )
-            //                 ]
-            //              );
-            //          }).toList(),
-            //       ),
-            //     ),
+             Padding(
+                    padding: EdgeInsets.only(right: 130),
+                    child: Text(
+                      'ZyNerd Aspire',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontSize: 25,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xFF005D8C)),
+                    ),
+                  ),
+                Container(
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                     children: str.map((strone){
+                         return Row(
+                            children:[
+                              Text("\u2022", style: TextStyle(fontSize: 30,color: Color.fromARGB(255, 117, 169, 195),),), //bullet text
+                              SizedBox(width: 10,), //space between bullet and text
+                              Expanded(
+                                child:Text(strone, style:TextStyle(
+                      //  height: 0,
+                          fontSize: 14,
+                      color: Color(0XFF767A7C),
+                      //  overflow: TextOverflow.fade,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'poppins'),), //text
+                              )
+                            ]
+                         );
+                     }).toList(),
+                  ),
+                ),
+              ],
+            ),
+            
+          
+    
+          
           ),
           
         ],
