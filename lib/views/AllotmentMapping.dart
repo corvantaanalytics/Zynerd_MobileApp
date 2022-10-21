@@ -22,12 +22,12 @@ class  _AllotmentMappingState extends State<AllotmentsMapping> {
       appBar: AppBar(
         title: Container(
           // padding: EdgeInsets.only(right: 20),
-          width: 100,
+          width: 110,
           child: IconButton(
             icon: Image.asset(
               'assets/images/Landing/ZyNerd-Final-Logo.png',
-              height: 25,
-              width: 400,
+              height: 28,
+              width: 120,
               fit: BoxFit.fill,
             ),
             onPressed: () {
@@ -38,7 +38,7 @@ class  _AllotmentMappingState extends State<AllotmentsMapping> {
             },
           ),
         ),
-        // titleSpacing: -20,
+         titleSpacing: -10,
         // centerTitle: false,
         leading: PopupMenuButton(
           child: Icon(
@@ -61,7 +61,7 @@ class  _AllotmentMappingState extends State<AllotmentsMapping> {
         ),
         actions: [
           Container(
-            width: 30,
+            width: 70,
             child: Image.asset('assets/images/profile_pic.png'),
           ),
         ],
