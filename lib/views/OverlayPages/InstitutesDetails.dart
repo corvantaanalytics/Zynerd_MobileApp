@@ -329,7 +329,7 @@ class InstituteDetailsState extends State<InstituteDetails> {
               height: 1.5,
             ),
              SizedBox(
-      height: 15,
+      height: 10,
     ),
 DataTable(
  columns: [
@@ -402,8 +402,21 @@ DataTable(
                           fontWeight: FontWeight.w400,
                           fontFamily: 'Poppins',
                           color: Color(0XFF0C0C0C)),)),
-            
-           
+         ]
+         ),
+          DataRow(cells: [
+            DataCell(Text('General', style: TextStyle(
+                        height: 2.0,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: 'Poppins',
+                          color: Color(0XFF0C0C0C)),)),
+            DataCell(Text('Seat Distribution', style: TextStyle(
+                        height: 2.0,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: 'Poppins',
+                          color: Color(0XFF0C0C0C)),)),
          ]
          )
          
