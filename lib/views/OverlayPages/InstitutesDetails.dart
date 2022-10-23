@@ -24,9 +24,11 @@ class InstituteDetailsState extends State<InstituteDetails> {
    
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+    home:Scaffold(
+       backgroundColor: Colors.white,
       appBar: AppBar(
-           backgroundColor: Colors.white,
+             backgroundColor: Colors.white,
         leading: IconButton(
           icon: Image.asset(
             'assets/images/Landing/ZyNerd-Final-Logo.png',
@@ -422,6 +424,7 @@ DataTable(
          
     ])
       ]),
+    )
     );
   }
 }
