@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zynerd_app/views/About_Us.dart';
+import 'package:zynerd_app/views/Allotment.dart';
 import 'package:zynerd_app/views/contact_us.dart';
 
 class FAQ extends StatefulWidget {
@@ -27,15 +28,20 @@ class _FAQState extends State<FAQ> {
             width: 100,
             fit: BoxFit.fill,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Allotments()),
+            );
+          },
         ),
       ),
       body: ListView(
         children: [
           Container(
-            padding: EdgeInsets.only(left: 15),
+            padding: EdgeInsets.only(left: 15, top: 20),
             child: Container(
-              height: 72,
+              height: 35,
               width: 229,
               child: Text("Frequently asked ",
                   // textAlign: TextAlign.left,
@@ -47,7 +53,7 @@ class _FAQState extends State<FAQ> {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(left: 15),
+            padding: EdgeInsets.only(left: 15, top: 10),
             child: Container(
               height: 72,
               width: 229,
@@ -87,7 +93,7 @@ class _FAQState extends State<FAQ> {
                   width: 154,
                   // width: MediaQuery.of(context).size.width /
                   //     100, // minus 32 due to the margin
-                  margin: EdgeInsets.all(10.0),
+                  margin: EdgeInsets.only(right: 10),
                   padding: EdgeInsets.all(10.0),
                   decoration: BoxDecoration(
                     color: Colors.white, // background color of the cards
@@ -106,7 +112,7 @@ class _FAQState extends State<FAQ> {
                   width: 154,
                   // width: MediaQuery.of(context).size.width /
                   //     100, // minus 32 due to the margin
-                  margin: EdgeInsets.all(10.0),
+                  margin: EdgeInsets.only(right: 30),
                   padding: EdgeInsets.all(10.0),
                   decoration: BoxDecoration(
                     color: Colors.white, // background color of the cards
@@ -140,8 +146,110 @@ class _FAQState extends State<FAQ> {
                             labelText: 'Search by title',
                             contentPadding: EdgeInsets.symmetric(vertical: 7),
                           ))))),
+              Container(
+                padding: EdgeInsets.all(8.0),
+                height: 50,
+                width: 390,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                  border: Border.all(
+                    color: Color(0xFFECECEC),
+                  ),
+                ),
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<String>(
+                    focusColor: Colors.white,
+                    iconEnabledColor: Colors.black,
+                    items: <String>['TamilNadu', 'Kerala', 'Karnata']
+                        .map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(fontSize: 14, fontFamily: 'Poppins'),
+                        ),
+                      );
+                    }).toList(),
+                    hint: Text(
+                      '  All India Counselling',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                          fontFamily: 'Poppins'),
+                    ),
+                    onChanged: (_) {},
+                  ),
+                ),
+              ),
             ]),
-          )
+          ),
+          Container(
+            child: Row(
+              children: [
+                Container(
+                  height: 30,
+                  width: 101,
+                  // width: MediaQuery.of(context).size.width /
+                  //     100, // minus 32 due to the margin
+                  margin: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.only(left: 10, top: 5),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(
+                        255, 189, 207, 225), // background color of the cards
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  ),
+                  child: Text("Tag name 1",
+                      // textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontSize: 13,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF005D8C))),
+                ),
+                Container(
+                  height: 30,
+                  width: 101,
+                  // width: MediaQuery.of(context).size.width /
+                  //     100, // minus 32 due to the margin
+                  margin: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.only(left: 10, top: 5),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(
+                        255, 189, 207, 225), // background color of the cards
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  ),
+                  child: Text("Tag name 2",
+                      // textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontSize: 13,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF005D8C))),
+                ),
+                Container(
+                  height: 30,
+                  width: 101,
+                  // width: MediaQuery.of(context).size.width /
+                  //     100, // minus 32 due to the margin
+                  margin: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.only(left: 10, top: 5),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(
+                        255, 189, 207, 225), // background color of the cards
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  ),
+                  child: Text("Tag name 3",
+                      // textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontSize: 13,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF005D8C))),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
