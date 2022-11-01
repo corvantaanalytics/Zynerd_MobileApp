@@ -21,6 +21,7 @@ class _FAQState extends State<FAQ> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFFE9E9E9),
         leading: IconButton(
           icon: Image.asset(
             'assets/images/Landing/ZyNerd-Final-Logo.png',
@@ -31,12 +32,14 @@ class _FAQState extends State<FAQ> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Allotments()),
+              MaterialPageRoute(builder: (context) => const FAQ()),
             );
           },
         ),
+        leadingWidth: 200,
       ),
       body: ListView(
+        // scrollDirection: Axis.horizontal,
         children: [
           Container(
             padding: EdgeInsets.only(left: 15, top: 20),
@@ -78,7 +81,7 @@ class _FAQState extends State<FAQ> {
                   padding: EdgeInsets.all(10.0),
                   decoration: BoxDecoration(
                     color: Colors.white, // background color of the cards
-                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
                   ),
                   child: Text("Common FAQs",
                       // textAlign: TextAlign.left,
@@ -97,7 +100,7 @@ class _FAQState extends State<FAQ> {
                   padding: EdgeInsets.all(10.0),
                   decoration: BoxDecoration(
                     color: Colors.white, // background color of the cards
-                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
                   ),
                   child: Text("Counselings and Counseling Elegibility",
                       // textAlign: TextAlign.left,
@@ -116,7 +119,7 @@ class _FAQState extends State<FAQ> {
                   padding: EdgeInsets.all(10.0),
                   decoration: BoxDecoration(
                     color: Colors.white, // background color of the cards
-                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
                   ),
                   child: Text("Reservation & Category /Community Certificates",
                       // textAlign: TextAlign.left,
@@ -143,43 +146,52 @@ class _FAQState extends State<FAQ> {
                           child: TextFormField(
                               decoration: InputDecoration(
                             border: InputBorder.none,
-                            labelText: 'Search by title',
+                            hintText: "Search by title",
+                            hintStyle: TextStyle(fontFamily: 'Poppins'),
+                            // labelText: 'Search by title',
                             contentPadding: EdgeInsets.symmetric(vertical: 7),
                           ))))),
               Container(
-                padding: EdgeInsets.all(8.0),
-                height: 50,
-                width: 390,
+                margin: EdgeInsets.all(10.0),
+                padding: EdgeInsets.only(left: 10, top: 5),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                  border: Border.all(
-                    color: Color(0xFFECECEC),
-                  ),
+                  color: Colors.white, // background color of the cards
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
                 ),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton<String>(
-                    focusColor: Colors.white,
-                    iconEnabledColor: Colors.black,
-                    items: <String>['TamilNadu', 'Kerala', 'Karnata']
-                        .map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(
-                          value,
-                          style: TextStyle(fontSize: 14, fontFamily: 'Poppins'),
+                child: Column(
+                  children: [
+                    ExpansionTile(
+                      expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                      title: RichText(
+                        text: TextSpan(
+                          children: const [
+                            TextSpan(
+                              text: 'All India Counselling',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xFF0C0C0C),
+                              ),
+                            ),
+                          ],
                         ),
-                      );
-                    }).toList(),
-                    hint: Text(
-                      '  All India Counselling',
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.black,
-                          fontFamily: 'Poppins'),
+                      ),
+                      children: [
+                        ListTile(
+                          contentPadding: EdgeInsets.only(left: 10, right: 10),
+                          title: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(1),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                    onChanged: (_) {},
-                  ),
+                  ],
                 ),
               ),
             ]),
@@ -195,8 +207,7 @@ class _FAQState extends State<FAQ> {
                   margin: EdgeInsets.all(10.0),
                   padding: EdgeInsets.only(left: 10, top: 5),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(
-                        255, 189, 207, 225), // background color of the cards
+                    color: Color(0xFFEAF0F3), // background color of the cards
                     borderRadius: BorderRadius.all(Radius.circular(5.0)),
                   ),
                   child: Text("Tag name 1",
@@ -215,8 +226,7 @@ class _FAQState extends State<FAQ> {
                   margin: EdgeInsets.all(10.0),
                   padding: EdgeInsets.only(left: 10, top: 5),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(
-                        255, 189, 207, 225), // background color of the cards
+                    color: Color(0xFFEAF0F3), // background color of the cards
                     borderRadius: BorderRadius.all(Radius.circular(5.0)),
                   ),
                   child: Text("Tag name 2",
@@ -235,8 +245,7 @@ class _FAQState extends State<FAQ> {
                   margin: EdgeInsets.all(10.0),
                   padding: EdgeInsets.only(left: 10, top: 5),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(
-                        255, 189, 207, 225), // background color of the cards
+                    color: Color(0xFFEAF0F3), // background color of the cards
                     borderRadius: BorderRadius.all(Radius.circular(5.0)),
                   ),
                   child: Text("Tag name 3",
@@ -246,6 +255,238 @@ class _FAQState extends State<FAQ> {
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.w400,
                           color: Color(0xFF005D8C))),
+                ),
+                Container(
+                  height: 30,
+                  width: 101,
+                  // width: MediaQuery.of(context).size.width /
+                  //     100, // minus 32 due to the margin
+                  margin: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.only(left: 10, top: 5),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFEAF0F3), // background color of the cards
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  ),
+                  child: Text("Tag name 4",
+                      // textAlign: TextAlign.left,
+                      style: TextStyle(
+                          fontSize: 13,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF005D8C))),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(10.0),
+            padding: EdgeInsets.only(left: 10, top: 5),
+            decoration: BoxDecoration(
+              color: Colors.white, // background color of the cards
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            ),
+            child: Column(
+              children: [
+                ExpansionTile(
+                  expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                  title: RichText(
+                    text: TextSpan(
+                      children: const [
+                        TextSpan(
+                          text: 'Set 1 -',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFF767A7C),
+                          ),
+                        ),
+                        TextSpan(
+                          text: '\tPercentile Calculator Tool',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFF0C0C0C),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  children: [
+                    ListTile(
+                      contentPadding: EdgeInsets.only(left: 10, right: 10),
+                      title: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(1),
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              color: Color(0xFFF8F8F8),
+                              child: Padding(
+                                padding: EdgeInsets.all(15),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    Text(
+                                      'NEET PG 2021 Percentile calculator Tool ',
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFF0C0C0C)),
+                                    ),
+                                    Text(
+                                      'Enter ranks in the yellow cell to get NEET PG percentile.',
+                                      style: TextStyle(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w300,
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFF767A7C)),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 20, right: 10, top: 10, bottom: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Color(0xFF005D8C),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(7),
+                              ),
+                              padding: EdgeInsets.all(10),
+                            ),
+                            onPressed: () {},
+                            child: const Text(
+                              'Calculator',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(10.0),
+            padding: EdgeInsets.only(left: 10, top: 5),
+            decoration: BoxDecoration(
+              color: Colors.white, // background color of the cards
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            ),
+            child: Column(
+              children: [
+                ExpansionTile(
+                  expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                  title: RichText(
+                    text: TextSpan(
+                      children: const [
+                        TextSpan(
+                          text: 'All India 2021 (MCC)-Registration',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFF0C0C0C),
+                          ),
+                        ),
+                        TextSpan(
+                          text: 'Fee and Institute Fee Payment',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFF0C0C0C),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  children: [
+                    ListTile(
+                      contentPadding: EdgeInsets.only(left: 10, right: 10),
+                      title: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(1),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(10.0),
+            padding: EdgeInsets.only(left: 10, top: 5),
+            decoration: BoxDecoration(
+              color: Colors.white, // background color of the cards
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            ),
+            child: Column(
+              children: [
+                ExpansionTile(
+                  expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                  title: RichText(
+                    text: TextSpan(
+                      children: const [
+                        TextSpan(
+                          text: 'Permitted Seats vs Recognized     ',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFF0C0C0C),
+                          ),
+                        ),
+                        TextSpan(
+                          text: 'Seats',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFF0C0C0C),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  children: [
+                    ListTile(
+                      contentPadding: EdgeInsets.only(left: 10, right: 10),
+                      title: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(1),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
