@@ -33,7 +33,7 @@ class _FAQState extends State<FAQ> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const SeatMatrix()),
+              MaterialPageRoute(builder: (context) => Allotments()),
             );
           },
         ),

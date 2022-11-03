@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:zynerd_app/views/FAQ.dart';
 import 'package:zynerd_app/views/OverlayPages/InstitutesDetails.dart';
+import 'package:zynerd_app/views/contact_us.dart';
 // import 'package:zynerd_app/views/AllotmentMapping.dart';
 import 'landing.dart';
 
@@ -35,7 +37,7 @@ class _InstitutesState extends State<Institutes> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Institutes()),
+                MaterialPageRoute(builder: (context) => const ContactUs()),
               );
             },
           ),

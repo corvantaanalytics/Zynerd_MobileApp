@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:zynerd_app/views/Counselling.dart';
+import 'package:zynerd_app/views/SeatMatrix.dart';
 // import 'package:zynerd_app/views/AllotmentMapping.dart';
 import 'landing.dart';
 
@@ -34,7 +36,7 @@ class _ClosingranksState extends State<Closingranks> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Closingranks()),
+                MaterialPageRoute(builder: (context) => const SeatMatrix()),
               );
             },
           ),

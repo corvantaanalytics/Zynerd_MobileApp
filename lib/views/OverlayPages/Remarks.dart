@@ -21,22 +21,16 @@ void _pushMenu() {
 }
 
 class RemarksState extends State<Remarks> {
-    List<String> str = [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  ];
-     List<String> stm = [
-   " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus morbi tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus morbi tempor."
+  List<String> str = [];
+  List<String> stm = [
+    " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus morbi tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus morbi tempor."
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-           backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
         leading: IconButton(
           icon: Image.asset(
             'assets/images/Landing/ZyNerd-Final-Logo.png',
@@ -44,12 +38,7 @@ class RemarksState extends State<Remarks> {
             width: 100,
             fit: BoxFit.fill,
           ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ContactUs()),
-            );
-          },
+          onPressed: () {},
         ),
         leadingWidth: 200,
         actions: [
@@ -70,178 +59,197 @@ class RemarksState extends State<Remarks> {
             padding: EdgeInsets.symmetric(horizontal: 12),
           )
         ],
-     
       ),
       body: ListView(children: [
         Row(
           children: [
-             IconButton(
-    icon: Icon(Icons.arrow_back, color: Colors.black,size: 31),
-    onPressed: () => Navigator.of(context).pop(),
-  ), 
-   Text(
-                    ' Remarks',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 31,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Poppins'),
-                  ),
-
+            IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.black, size: 31),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+            Text(
+              ' Remarks',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 31,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'Poppins'),
+            ),
           ],
         ),
-
-    SizedBox(
-      height: 10,
-    ),
-      Padding(
-                    padding: EdgeInsets.only(left:20 ),
-                    child: Text(
-                      "Viewing Allotments",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Poppins',
-                          color: Color(0XFF0C0C0C)),
-                    ),
-                  ),
-                  Padding(
-                     padding: EdgeInsets.only(left:20),
-                    child: Text(
-                      'Include Seats in Private Institutes',
-                      // textAlign: TextAlign.center,
-                      style: TextStyle(
-                        height: 2.0,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w300,
-                          fontFamily: 'Poppins',
-                          color: Color(0XFF767A7C)),
-                    ),
-                  ),
-  
- Padding(
-                    padding: EdgeInsets.only(left:20 ),
-                    child: Text(
-                      "Ranks",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        height: 2,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Poppins',
-                          color: Color(0XFF0C0C0C)),
-                    ),
-                  ),
-  Container(
-                 padding: EdgeInsets.only(left:20 ),
-                  child: Column(
-                     children: str.map((strone){
-                         return Row(
-                            children:[
-                              Text("\u2022", style: TextStyle(fontSize: 30,     color: Color(0XFF767A7C),),), //bullet text
-                              SizedBox(width: 10,), //space between bullet and text
-                              Expanded(
-                                child:Text(strone, style:TextStyle(
-                      //  height: 0,
-                          fontSize: 14,
-                      color: Color(0XFF767A7C),
-                      //  overflow: TextOverflow.fade,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'poppins'),), //text
-                              )
-                            ]
-                         );
-                     }).toList(),
-                  ),
-                ),
-       SizedBox(
-        height: 10,
-       ),
+        SizedBox(
+          height: 10,
+        ),
         Padding(
-                    padding: EdgeInsets.only(left:20 ),
-                    child: Text(
-                      "Rounds",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        height: 2,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Poppins',
-                          color: Color(0XFF0C0C0C)),
-                    ),
+          padding: EdgeInsets.only(left: 20),
+          child: Text(
+            "Viewing Allotments",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'Poppins',
+                color: Color(0XFF0C0C0C)),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: Text(
+            'Include Seats in Private Institutes',
+            // textAlign: TextAlign.center,
+            style: TextStyle(
+                height: 2.0,
+                fontSize: 16,
+                fontWeight: FontWeight.w300,
+                fontFamily: 'Poppins',
+                color: Color(0XFF767A7C)),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: Text(
+            "Ranks",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+                height: 2,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'Poppins',
+                color: Color(0XFF0C0C0C)),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.only(left: 20),
+          child: Column(
+            children: str.map((strone) {
+              return Row(children: [
+                Text(
+                  "\u2022",
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Color(0XFF767A7C),
                   ),
-                  
-  Container(
-                 padding: EdgeInsets.only(left:20 ),
-                  child: Column(
-                     children: str.map((strone){
-                         return Row(
-                            children:[
-                              Text("\u2022", style: TextStyle(fontSize: 30,     color: Color(0XFF767A7C),),), //bullet text
-                              SizedBox(width: 10,), //space between bullet and text
-                              Expanded(
-                                child:Text(strone, style:TextStyle(
-                      //  height: 0,
-                          fontSize: 14,
-                      color: Color(0XFF767A7C),
-                      //  overflow: TextOverflow.fade,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'poppins'),), //text
-                              )
-                            ]
-                         );
-                     }).toList(),
+                ), //bullet text
+                SizedBox(
+                  width: 10,
+                ), //space between bullet and text
+                Expanded(
+                  child: Text(
+                    strone,
+                    style: TextStyle(
+                        //  height: 0,
+                        fontSize: 14,
+                        color: Color(0XFF767A7C),
+                        //  overflow: TextOverflow.fade,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'poppins'),
+                  ), //text
+                )
+              ]);
+            }).toList(),
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: Text(
+            "Rounds",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+                height: 2,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'Poppins',
+                color: Color(0XFF0C0C0C)),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.only(left: 20),
+          child: Column(
+            children: str.map((strone) {
+              return Row(children: [
+                Text(
+                  "\u2022",
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Color(0XFF767A7C),
                   ),
-                ),
-SizedBox(
-  height: 20,
-),
- Divider(
-              thickness: 2,
-              indent: 2,
-              endIndent: 2,
-              color: Color(0xFFECECEC),
-              height: 1.5,
-            ),
- Padding(
-                    padding: EdgeInsets.only(left:20 ),
-                    child: Text(
-                      "Seat Category Classification",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        height: 2,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Poppins',
-                          color: Color(0XFF0C0C0C)),
-                    ),
+                ), //bullet text
+                SizedBox(
+                  width: 10,
+                ), //space between bullet and text
+                Expanded(
+                  child: Text(
+                    strone,
+                    style: TextStyle(
+                        //  height: 0,
+                        fontSize: 14,
+                        color: Color(0XFF767A7C),
+                        //  overflow: TextOverflow.fade,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'poppins'),
+                  ), //text
+                )
+              ]);
+            }).toList(),
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Divider(
+          thickness: 2,
+          indent: 2,
+          endIndent: 2,
+          color: Color(0xFFECECEC),
+          height: 1.5,
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: Text(
+            "Seat Category Classification",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+                height: 2,
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'Poppins',
+                color: Color(0XFF0C0C0C)),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.only(left: 20),
+          child: Column(
+            children: str.map((strone) {
+              return Row(children: [
+                Text(
+                  "\u2022",
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Color(0XFF767A7C),
                   ),
-                  
-  Container(
-                 padding: EdgeInsets.only(left:20 ),
-                  child: Column(
-                     children: str.map((strone){
-                         return Row(
-                            children:[
-                              Text("\u2022", style: TextStyle(fontSize: 30,     color: Color(0XFF767A7C),),), //bullet text
-                              SizedBox(width: 10,), //space between bullet and text
-                              Expanded(
-                                child:Text(strone, style:TextStyle(
-                      //  height: 0,
-                          fontSize: 14,
-                      color: Color(0XFF767A7C),
-                      //  overflow: TextOverflow.fade,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'poppins'),), //text
-                              )
-                            ]
-                         );
-                     }).toList(),
-                  ),
-                ),
-
-
+                ), //bullet text
+                SizedBox(
+                  width: 10,
+                ), //space between bullet and text
+                Expanded(
+                  child: Text(
+                    strone,
+                    style: TextStyle(
+                        //  height: 0,
+                        fontSize: 14,
+                        color: Color(0XFF767A7C),
+                        //  overflow: TextOverflow.fade,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'poppins'),
+                  ), //text
+                )
+              ]);
+            }).toList(),
+          ),
+        ),
       ]),
     );
   }

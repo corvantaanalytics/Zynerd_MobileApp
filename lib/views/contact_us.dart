@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:zynerd_app/views/About_Us.dart';
+import 'package:zynerd_app/views/FAQ.dart';
 
 class ContactUs extends StatefulWidget {
   const ContactUs({Key? key}) : super(key: key);
@@ -26,10 +28,10 @@ class _ContactUsState extends State<ContactUs> {
             fit: BoxFit.fill,
           ),
           onPressed: () {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(builder: (context) => const Signin()),
-            // );
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AboutUs()),
+            );
           },
         ),
         leadingWidth: 200,
