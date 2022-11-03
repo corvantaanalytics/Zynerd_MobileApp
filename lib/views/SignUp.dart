@@ -143,7 +143,7 @@ class _SignUpState extends State<SignUp> {
                   Padding(
                     padding: EdgeInsets.only(right: 280),
                     child: Text(
-                      'Sign up, ',
+                      'Sign up,',
                       textAlign: TextAlign.left,
                       style: TextStyle(
                           fontSize: 20,
