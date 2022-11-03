@@ -32,12 +32,7 @@ class AboutUsState extends State<AboutUs> {
             width: 100,
             fit: BoxFit.fill,
           ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ContactUs()),
-            );
-          },
+          onPressed: () {},
         ),
         leadingWidth: 200,
         actions: [

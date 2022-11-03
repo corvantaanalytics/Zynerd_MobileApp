@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:zynerd_app/views/ClosingRanks.dart';
+import 'package:zynerd_app/views/OverlayPages/InstitutesDetails.dart';
 import './landing.dart';
 
 class AllotmentsMapping extends StatefulWidget {
   const AllotmentsMapping({Key? key}) : super(key: key);
 
   @override
-  _AllotmentMappingState createState() =>  _AllotmentMappingState();
+  _AllotmentMappingState createState() => _AllotmentMappingState();
 }
 
 enum AllCounsel { CounsellingRanking, NEETPGRank }
 
-class  _AllotmentMappingState extends State<AllotmentsMapping> {
+class _AllotmentMappingState extends State<AllotmentsMapping> {
   String _selectedCounsel = 'Counselling Ranking';
   double _startValue = 20.0;
   double _endValue = 90.0;
@@ -33,12 +35,12 @@ class  _AllotmentMappingState extends State<AllotmentsMapping> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Landing()),
+                MaterialPageRoute(builder: (context) => const Closingranks()),
               );
             },
           ),
         ),
-         titleSpacing: -10,
+        titleSpacing: -10,
         // centerTitle: false,
         leading: PopupMenuButton(
           child: Icon(
@@ -156,8 +158,7 @@ class  _AllotmentMappingState extends State<AllotmentsMapping> {
                           // style: TextStyle(fontSize: 16, color: Colors.white),
                           // borderRadius: 5,
                           iconEnabledColor: Colors.black,
-                          items: <String>['1', '2', '3']
-                              .map((String value) {
+                          items: <String>['1', '2', '3'].map((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
                               child: Text(
@@ -196,8 +197,6 @@ class  _AllotmentMappingState extends State<AllotmentsMapping> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                     
-                     
                       Padding(
                         padding: EdgeInsets.only(left: 20, right: 20),
                         child: Column(
@@ -236,125 +235,134 @@ class  _AllotmentMappingState extends State<AllotmentsMapping> {
                             ),
                             Row(
                               children: [
-                                 SizedBox(
-                                width: 25,
-                      ),
-                                   Container(
-                        padding: EdgeInsets.all(8.0),
-                        height: 50,
-                        width: 160,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Color(0xFFECECEC),
-                          ),
-                        ),
-                        child: DropdownButtonHideUnderline(
-                            child: DropdownButton<String>(
-                          focusColor: Colors.white,
-                          // style: TextStyle(fontSize: 16, color: Colors.white),
-                          // borderRadius: 5,
-                          iconEnabledColor: Colors.black,
-                          items: <String>['TamilNadu', 'Kerala', 'Karnata']
-                              .map((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(
-                                value,
-                                style: TextStyle(
-                                    fontSize: 14, fontFamily: 'Poppins'),
-                              ),
-                            );
-                          }).toList(),
-                          hint: Text(
-                            'MIN',
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'Poppins'),
-                          ),
-                          onChanged: (_) {},
-                        )),
-                      ),
-                      SizedBox(
-                                width: 10,
-                      ),
-                         Container(
-                        padding: EdgeInsets.all(8.0),
-                        height: 50,
-                        width: 160,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Color(0xFFECECEC),
-                          ),
-                        ),
-                        child: DropdownButtonHideUnderline(
-                            child: DropdownButton<String>(
-                          focusColor: Colors.white,
-                          // style: TextStyle(fontSize: 16, color: Colors.white),
-                          // borderRadius: 5,
-                          iconEnabledColor: Colors.black,
-                          items: <String>['TamilNadu', 'Kerala', 'Karnata']
-                              .map((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(
-                                value,
-                                style: TextStyle(
-                                    fontSize: 14, fontFamily: 'Poppins'),
-                              ),
-                            );
-                          }).toList(),
-                          hint: Text(
-                            'MAX',
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black,
-                                fontFamily: 'Poppins'),
-                          ),
-                          onChanged: (_) {},
-                        )),
-                      ),
+                                SizedBox(
+                                  width: 25,
+                                ),
+                                Container(
+                                  padding: EdgeInsets.all(8.0),
+                                  height: 50,
+                                  width: 160,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.white,
+                                    border: Border.all(
+                                      color: Color(0xFFECECEC),
+                                    ),
+                                  ),
+                                  child: DropdownButtonHideUnderline(
+                                      child: DropdownButton<String>(
+                                    focusColor: Colors.white,
+                                    // style: TextStyle(fontSize: 16, color: Colors.white),
+                                    // borderRadius: 5,
+                                    iconEnabledColor: Colors.black,
+                                    items: <String>[
+                                      'TamilNadu',
+                                      'Kerala',
+                                      'Karnata'
+                                    ].map((String value) {
+                                      return DropdownMenuItem<String>(
+                                        value: value,
+                                        child: Text(
+                                          value,
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontFamily: 'Poppins'),
+                                        ),
+                                      );
+                                    }).toList(),
+                                    hint: Text(
+                                      'MIN',
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontFamily: 'Poppins'),
+                                    ),
+                                    onChanged: (_) {},
+                                  )),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Container(
+                                  padding: EdgeInsets.all(8.0),
+                                  height: 50,
+                                  width: 160,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.white,
+                                    border: Border.all(
+                                      color: Color(0xFFECECEC),
+                                    ),
+                                  ),
+                                  child: DropdownButtonHideUnderline(
+                                      child: DropdownButton<String>(
+                                    focusColor: Colors.white,
+                                    // style: TextStyle(fontSize: 16, color: Colors.white),
+                                    // borderRadius: 5,
+                                    iconEnabledColor: Colors.black,
+                                    items: <String>[
+                                      'TamilNadu',
+                                      'Kerala',
+                                      'Karnata'
+                                    ].map((String value) {
+                                      return DropdownMenuItem<String>(
+                                        value: value,
+                                        child: Text(
+                                          value,
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontFamily: 'Poppins'),
+                                        ),
+                                      );
+                                    }).toList(),
+                                    hint: Text(
+                                      'MAX',
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontFamily: 'Poppins'),
+                                    ),
+                                    onChanged: (_) {},
+                                  )),
+                                ),
                               ],
                             ),
-SizedBox(
-  height: 20,
-),
-                                 Center( 
-            child: SizedBox( 
-              height:48, //height of button
-              width:335, //width of button
-              child:ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  primary: Color(0xFF005D8C), //background color of button
-                  // side: BorderSide(width:3), //border width and color
-                  // elevation: 3, //elevation of button
-                  shape: RoundedRectangleBorder( //to set border radius to button
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  padding: EdgeInsets.all(10) //content padding inside button
-                ),
-                  onPressed: () {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(builder: (context) => const Dashboard()),
-            // );
-          },
-                child: Text(
-                                  'Go',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                     fontFamily: 'poppins',
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
-                                     ),
-                                ),
-              )
-            )
-        ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Center(
+                                child: SizedBox(
+                                    height: 48, //height of button
+                                    width: 335, //width of button
+                                    child: ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                          primary: Color(
+                                              0xFF005D8C), //background color of button
+                                          // side: BorderSide(width:3), //border width and color
+                                          // elevation: 3, //elevation of button
+                                          shape: RoundedRectangleBorder(
+                                              //to set border radius to button
+                                              borderRadius:
+                                                  BorderRadius.circular(10)),
+                                          padding: EdgeInsets.all(
+                                              10) //content padding inside button
+                                          ),
+                                      onPressed: () {
+                                        // Navigator.push(
+                                        //   context,
+                                        //   MaterialPageRoute(builder: (context) => const Dashboard()),
+                                        // );
+                                      },
+                                      child: Text(
+                                        'Go',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontFamily: 'poppins',
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                    ))),
                           ],
                         ),
                       ),
@@ -363,10 +371,6 @@ SizedBox(
                 ),
               ],
             ),
-         
-       
-          
-      
           ],
         ),
       ),

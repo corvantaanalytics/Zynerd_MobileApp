@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:zynerd_app/views/About_Us.dart';
+import 'package:zynerd_app/views/AllotmentMapping.dart';
+import 'package:zynerd_app/views/OverlayPages/FeesDetails.dart';
+import 'package:zynerd_app/views/OverlayPages/Remarks.dart';
 import './landing.dart';
 
 class Allotments extends StatefulWidget {
@@ -33,7 +37,8 @@ class _AllotmentState extends State<Allotments> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Landing()),
+                MaterialPageRoute(
+                    builder: (context) => const AllotmentsMapping()),
               );
             },
           ),
@@ -128,15 +133,22 @@ class _AllotmentState extends State<Allotments> {
                           onChanged: (_) {},
                         )),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 15, bottom: 15),
-                        child: Text(
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Remarks()),
+                          );
+                        },
+                        child: const Text(
                           'Counselling',
                           style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Poppins',
-                              color: Color(0xFF767A7C)),
+                            fontFamily: 'poppins',
+                            // color: Color(0xFF005D8C),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                       Container(
