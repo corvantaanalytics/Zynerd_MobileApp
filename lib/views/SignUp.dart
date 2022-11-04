@@ -11,7 +11,40 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+import 'package:zynerd_app/views/verify_OTP.dart';
+
 import '../models/post.dart';
+
+Future<States> getstates() async {
+  List<States> list;
+  const String urlStr = 'http://infra.zynerd.co.in/api_v2/signup/new';
+  final Uri url = Uri.parse(urlStr);
+
+  var response = await http.get(url, headers: {"Accept": "application/json"});
+  // print(response.statusCode);
+  Map<String, dynamic> responseJson =
+      json.decode(response.body) as Map<String, dynamic>;
+  // print("responseJson :: ${responseJson}");
+  // print("States :: ${responseJson['data']['states']}");
+
+  if (response.statusCode == 200) {
+    print(response.statusCode);
+    // final jsonStates = jsonDecode(response.body);
+    // var rest = jsonStates["states"] as List;
+    var zynerdStates = responseJson['data']['states'];
+    print("zynerdStates :: ${zynerdStates}");
+    // print(States.fromJson(jsonStates));
+    var preferredExam = responseJson['data']["preferred_exams"];
+    print("preferredExam :: ${preferredExam}");
+    return States.fromJson(zynerdStates);
+  } else {
+    throw Exception();
+  }
+}
+
+
+import '../models/post.dart';
+
 
 
 //   print(response);
@@ -64,6 +97,39 @@ class _SignUpState extends State<SignUp> {
     // print("responseJson :: ${responseJson}");
     // print("States :: ${responseJson['data']['states']}");
 
+
+  // @override
+  // void initState() {
+  //   dateinput.text = ""; //set the initial value of text field
+  //   super.initState();
+  // }
+
+  // String? _mySelection;
+
+  // final String url = "http://infra.zynerd.co.in/api_v2/signup/new";
+
+  // List data = List.filled(10000, 0, growable: true); //edited line
+
+  // Future<String> getSWData() async {
+  //   var res = await http.get(Uri.parse(url));
+  //   var resBody = json.decode(res.body);
+  //   print('resbody: $resBody');
+  //   setState(() {
+  //     resBody;
+  //     print(resBody);
+  //   });
+
+  //   return "Sucess";
+  // }
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   this.getSWData();s
+
+  //   // futureSignUp = fetchSignUp();
+  // }
+
     if (response.statusCode == 200) {
       print(response.statusCode);
       
@@ -77,6 +143,7 @@ class _SignUpState extends State<SignUp> {
       throw Exception();
     }
   }
+
 
   // @override
   // void initState() {
@@ -286,6 +353,35 @@ class _SignUpState extends State<SignUp> {
                             color: Colors.white,
                             borderRadius: new BorderRadius.circular(10.0),
                           ),
+
+                          child: FutureBuilder<States>(
+                              future: getstates(),
+                              builder: (context, snapshot) {
+                                if (snapshot.hasData) {
+                                  print("object");
+                                  final States = snapshot.data;
+                                  return Text("States : $States?.states}");
+                                } else if (snapshot.hasError) {
+                                  return Text(snapshot.error.toString());
+                                }
+                                return CircularProgressIndicator();
+                              }),
+                          // child: new DropdownButton(
+                          //   items: data.map((item) {
+                          //     return new DropdownMenuItem(
+                          //       // func() getSWData();
+                          //       child: new Text(item['item_name']),
+                          //       value: item['id'].toString(),
+                          //     );
+                          //   }).toList(),
+                          //   onChanged: (newVal) {
+                          //     setState(() {
+                          //       _mySelection = newVal;
+                          //     });
+                          //   },
+                          //   value: _mySelection,
+                          // ),
+
                           
                           // child: new DropdownButton(
                           //  items: data.map((item) {
@@ -360,6 +456,7 @@ class _SignUpState extends State<SignUp> {
                           border: Border.all(
                             color: Color(0xFFECECEC),
                           ),
+
                         ),
                         // child: DropdownButtonHideUnderline(
                         //     child:FutureBuilder<List<String>>(
@@ -593,6 +690,11 @@ class _SignUpState extends State<SignUp> {
                                 10) //content padding inside button
                             ),
                         onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => VerifyOTP()),
+                          );
                           //code to execute when this button is pressed.
                         },
                         child: Text(
