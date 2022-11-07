@@ -1,4 +1,5 @@
 import 'dart:developer';
+// import 'dart:html';
 import 'dart:ui';
 import 'package:intl/intl.dart';
 import 'package:flutter/gestures.dart';
@@ -9,18 +10,16 @@ import 'package:zynerd_app/views/subscription_policy.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:zynerd_app/views/verify_OTP.dart';
+
 import '../models/SignUp/States.dart';
 import '../models/post.dart';
 
-
 class SignUp extends StatefulWidget {
-
-
   const SignUp({Key? key}) : super(key: key);
 
   @override
   _SignUpState createState() => _SignUpState();
-
 }
 
 void _pushMenu() {
@@ -32,7 +31,7 @@ void _pushMenu() {
 class _SignUpState extends State<SignUp> {
   late Future<SignUp> futureSignUp;
   TextEditingController dateinput = TextEditingController();
-  // var zynerdStates = List<String>;
+
   List<String> zynerdStates = List.empty();
   List<PreferredExams> preferredExams = List.empty();
 
@@ -50,10 +49,19 @@ class _SignUpState extends State<SignUp> {
       List<dynamic> preferredExamsStr = responseJson["data"]['preferred_exams'];
 
       preferredExams = examFromJson(preferredExamsStr);
+
       return zynerdStates;
     } else {
       throw Exception();
     }
+  }
+
+  postData() async {
+    var response = http
+        .post(Uri.parse('http://infra.zynerd.co.in/api_v2/signup/new'), body: {
+      "id": 1,
+      "name": "dvhi",
+    });
   }
 
   @override
@@ -147,7 +155,7 @@ class _SignUpState extends State<SignUp> {
                               child: TextFormField(
                                   decoration: InputDecoration(
                                 border: InputBorder.none,
-                                labelText: 'Name',
+                                hintText: 'Name',
                                 contentPadding:
                                     EdgeInsets.symmetric(vertical: 7),
                               ))))),
@@ -232,16 +240,25 @@ class _SignUpState extends State<SignUp> {
                             color: Colors.white,
                             borderRadius: new BorderRadius.circular(10.0),
                           ),
-                          child: DropdownButtonFormField<String>(
-                            items: zynerdStates
-                                .map((states) => DropdownMenuItem(
-                                      value: states,
-                                      child: Text(states),
-                                    ))
-                                .toList(),
-                            onChanged: (_) {},
-                          ),
-                        ),
+                          child: FutureBuilder<List<String>>(
+                              future: getstates(),
+                              builder: (context, items) {
+                                if (items.hasData) {
+                                  final States = items.data;
+                                  return DropdownButtonFormField<String>(
+                                    items: zynerdStates
+                                        .map((states) => DropdownMenuItem(
+                                              value: states,
+                                              child: Text(states),
+                                            ))
+                                        .toList(),
+                                    onChanged: (_) {},
+                                  );
+                                }
+
+                                return CircularProgressIndicator();
+                              }),
+                        )
                       ],
                     ),
                   ),
@@ -267,16 +284,23 @@ class _SignUpState extends State<SignUp> {
                             color: Colors.white,
                             borderRadius: new BorderRadius.circular(10.0),
                           ),
-                          child: DropdownButtonFormField<PreferredExams>(
-                            items: preferredExams
-                                // items: zynerdStates
-                                .map((exam) => DropdownMenuItem(
-                                      value: exam,
-                                      child: Text(exam.name),
-                                    ))
-                                .toList(),
-                            onChanged: (_) {},
-                          ),
+                          child: FutureBuilder<List<String>>(
+                              future: getstates(),
+                              builder: (context, items) {
+                                if (items.hasData) {
+                                  return DropdownButtonFormField<
+                                      PreferredExams>(
+                                    items: preferredExams
+                                        .map((exam) => DropdownMenuItem(
+                                              value: exam,
+                                              child: Text(exam.name),
+                                            ))
+                                        .toList(),
+                                    onChanged: (_) {},
+                                  );
+                                }
+                                return CircularProgressIndicator();
+                              }),
                         ),
                       ],
                     ),
@@ -306,7 +330,7 @@ class _SignUpState extends State<SignUp> {
                               child: TextFormField(
                                   decoration: InputDecoration(
                                 border: InputBorder.none,
-                                labelText: 'Email',
+                                hintText: 'Email',
                                 contentPadding:
                                     EdgeInsets.symmetric(vertical: 7),
                               ))))),
@@ -341,7 +365,7 @@ class _SignUpState extends State<SignUp> {
                                       border: InputBorder.none,
                                       contentPadding:
                                           EdgeInsets.symmetric(vertical: 7),
-                                      labelText: 'Your password',
+                                      hintText: 'Your password',
                                     )))),
                       ],
                     ),
@@ -436,7 +460,11 @@ class _SignUpState extends State<SignUp> {
                                 10) //content padding inside button
                             ),
                         onPressed: () {
-                          //code to execute when this button is pressed.
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const VerifyOTP()),
+                          );
                         },
                         child: Text(
                           'Request OTP',
