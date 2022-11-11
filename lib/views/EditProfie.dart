@@ -66,7 +66,7 @@ class _EditProfileState extends State<EditProfile> {
         actions: [
           Container(
             width: 30,
-            child: Image.asset('assets/images/profile_pic.png'),
+            child: Image.asset('assets/images/Dashboard/DefaultProfile.png'),
           ),
         ],
         backgroundColor: Colors.white,
@@ -76,42 +76,96 @@ class _EditProfileState extends State<EditProfile> {
           Container(
             // height: 722,
             width: 315, // minus 32 due to the margin
-            margin: EdgeInsets.all(14.0),
-            padding: EdgeInsets.all(14.0),
+            margin: EdgeInsets.all(20.0),
+            // padding: EdgeInsets.all(20.0),
             decoration: BoxDecoration(
-              color: Color.fromARGB(
-                  255, 113, 21, 21), // background color of the cards
-              borderRadius: BorderRadius.all(Radius.circular(14.0)),
+              color: Color(0xFFFFFFFF), // background color of the cards
+              borderRadius: BorderRadius.all(Radius.circular(20.0)),
             ),
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.all(14.0),
-                  padding: EdgeInsets.all(14.0),
-                  decoration: BoxDecoration(
-                    // background color of the cards
-                    borderRadius: BorderRadius.all(Radius.circular(14.0)),
+                  margin: EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
+                  height: 205,
+                  width: 400,
+                  // margin: EdgeInsets.only(bottom: 120),
+                  // padding: EdgeInsets.only(top: 2000, right: 200),
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                    image: DecorationImage(
+                        image:
+                            AssetImage('assets/images/Dashboard/Rectangle.png'),
+                        fit: BoxFit.fill),
                   ),
+                  child: Container(
+                    width: double.infinity,
+                    height: 200,
+                    child: Container(
+                      alignment: Alignment(0.0, 4.0),
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage(
+                            'assets/images/Dashboard/DefaultProfile.png'),
+                        radius: 60.0,
+                      ),
+                    ),
+                  ),
+                  // child: Column(
+                  //   children: [
+                  //     Stack(
+                  //       alignment: Alignment.center,
+                  //       children: [
+                  //         Container(
+                  //           height: 205,
+                  //           width: 400,
+                  //           margin: EdgeInsets.only(bottom: 120),
+                  //           padding: EdgeInsets.only(top: 2000, right: 200),
+                  //           // decoration: const BoxDecoration(
+                  //           //   borderRadius:
+                  //           //       BorderRadius.all(Radius.circular(20)),
+                  //           //   image: DecorationImage(
+                  //           //       image: AssetImage(
+                  //           //           'assets/images/Dashboard/Rectangle.png'),
+                  //           //       fit: BoxFit.fill),
+                  //           // ),
+                  //           child: Container(
+                  //             width: double.infinity,
+                  //             height: 200,
+                  //             child: Container(
+                  //               alignment: Alignment(0.0, 2.5),
+                  //               child: Text('data'),
+                  //               // child: CircleAvatar(
+                  //               //   backgroundImage: AssetImage(
+                  //               //       'assets/images/Dashboard/DefaultProfile.png'),
+                  //               // ),
+                  //             ),
+                  //           ),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ],
+                  // ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 50, bottom: 20),
                   child: Column(
-                    children: [
-                      Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Container(
-                            height: 205,
-                            width: 400,
-                            margin: EdgeInsets.only(bottom: 120),
-                            padding: EdgeInsets.only(top: 2000, right: 200),
-                            decoration: const BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(14)),
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/images/Dashboard/Rectangle.png'),
-                                  fit: BoxFit.fill),
-                            ),
-                          ),
-                        ],
+                    children: const [
+                      Text(
+                        'Esther P.',
+                        style: TextStyle(
+                            fontSize: 26,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500),
+                      ),
+                      Text(
+                        'esterp@gmail.com',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Poppins',
+                            color: Color(0xFF767A7C)),
                       ),
                     ],
                   ),
@@ -140,6 +194,7 @@ class _EditProfileState extends State<EditProfile> {
                     ),
                   ],
                 ),
+                Divider(),
                 Container(
                   width: 330,
                   child: Row(
@@ -147,7 +202,7 @@ class _EditProfileState extends State<EditProfile> {
                       Center(
                         child: Column(
                           children: [
-                            new Image.asset(
+                            Image.asset(
                               "assets/images/DOB.png",
                               // width: 40,
                               // height: 40,
@@ -162,7 +217,7 @@ class _EditProfileState extends State<EditProfile> {
                       Container(
                         width: 80,
                         child: Column(
-                          children: [
+                          children: const [
                             Text(
                               'Date of Birth',
                               maxLines: 1,
@@ -183,7 +238,7 @@ class _EditProfileState extends State<EditProfile> {
                       Container(
                         width: 80,
                         child: Column(
-                          children: [
+                          children: const [
                             Text(
                               'Nov 28, 1995',
                               maxLines: 1,
@@ -212,7 +267,7 @@ class _EditProfileState extends State<EditProfile> {
                       Center(
                         child: Column(
                           children: [
-                            new Image.asset(
+                            Image.asset(
                               "assets/images/Call.png",
                               // width: 40,
                               // height: 40,
@@ -227,7 +282,7 @@ class _EditProfileState extends State<EditProfile> {
                       Container(
                         width: 80,
                         child: Column(
-                          children: [
+                          children: const [
                             Text(
                               'Phone Number',
                               maxLines: 1,
@@ -249,7 +304,7 @@ class _EditProfileState extends State<EditProfile> {
                       Container(
                         width: 80,
                         child: Column(
-                          children: [
+                          children: const [
                             Text(
                               '+91 9547985262',
                               maxLines: 1,
@@ -278,7 +333,7 @@ class _EditProfileState extends State<EditProfile> {
                       Center(
                         child: Column(
                           children: [
-                            new Image.asset(
+                            Image.asset(
                               "assets/images/Place.png",
                               // width: 40,
                               // height: 40,
@@ -293,7 +348,7 @@ class _EditProfileState extends State<EditProfile> {
                       Container(
                         width: 80,
                         child: Column(
-                          children: [
+                          children: const [
                             Text(
                               'State',
                               maxLines: 1,
@@ -315,7 +370,7 @@ class _EditProfileState extends State<EditProfile> {
                       Container(
                         width: 80,
                         child: Column(
-                          children: [
+                          children: const [
                             Text(
                               'Tamilnadu',
                               maxLines: 1,
@@ -344,7 +399,7 @@ class _EditProfileState extends State<EditProfile> {
                       Center(
                         child: Column(
                           children: [
-                            new Image.asset(
+                            Image.asset(
                               "assets/images/Date.png",
                               // width: 40,
                               // height: 40,
@@ -359,7 +414,7 @@ class _EditProfileState extends State<EditProfile> {
                       Container(
                         width: 80,
                         child: Column(
-                          children: [
+                          children: const [
                             Text(
                               'Date Joined',
                               maxLines: 1,
@@ -380,7 +435,7 @@ class _EditProfileState extends State<EditProfile> {
                       Container(
                         width: 80,
                         child: Column(
-                          children: [
+                          children: const [
                             Text(
                               'Jan 11, 2022',
                               maxLines: 1,
@@ -409,7 +464,7 @@ class _EditProfileState extends State<EditProfile> {
                       Center(
                         child: Column(
                           children: [
-                            new Image.asset(
+                            Image.asset(
                               "assets/images/Exam.png",
                               // width: 40,
                               // height: 40,
@@ -424,7 +479,7 @@ class _EditProfileState extends State<EditProfile> {
                       Container(
                         width: 80,
                         child: Column(
-                          children: [
+                          children: const [
                             Text(
                               'Preferred Exam',
                               maxLines: 1,
@@ -445,7 +500,7 @@ class _EditProfileState extends State<EditProfile> {
                       Container(
                         width: 80,
                         child: Column(
-                          children: [
+                          children: const [
                             Text(
                               'NEET UG',
                               maxLines: 1,
@@ -506,89 +561,72 @@ class _EditProfileState extends State<EditProfile> {
               ],
             ),
           ),
-          Column(
-            children: [
-              Container(
-                height: 350,
-                width: 380, // minus 32 due to the margin
-                margin: EdgeInsets.all(16.0),
-                padding: EdgeInsets.only(right: 50, top: 20),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(
-                      255, 152, 74, 74), // background color of the cards
-                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Color(0xFFFFFFFF),
+              border: Border.all(
+                color: Color(0xFFF4F4F4),
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'My Subscription',
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: 'Poppins',
+                      color: Color(0xFF0C0C0C)),
                 ),
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(right: 130),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 50),
-                      child: Text(
-                        'My Subscription',
-                        // textAlign: TextAlign.left,
-
-                        style: TextStyle(
-                            fontSize: 22,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black),
-                      ),
-                    ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Column(
-                        children: [
-                          Container(
-                            alignment: Alignment.topLeft,
-                            height: 240,
-                            width: 300,
-                            margin: EdgeInsets.all(10.0),
-                            padding: EdgeInsets.only(bottom: 160, right: 120),
-                            decoration: BoxDecoration(
-                                color: Color(0xFFFFFFFF),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20.0))),
-                            child: Row(
-                              children: [
-                                Padding(
-                                    padding: EdgeInsets.only(
-                                  left: 20,
-                                  top: 150,
-                                )),
-                                Container(
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        child: Row(
-                                          children: [
-                                            CircleAvatar(
-                                              radius: 20,
-                                              backgroundColor:
-                                                  Color(0xFFF85D05),
-                                              child: Padding(
-                                                padding: const EdgeInsets.all(
-                                                    8), // Border radius
-                                                child: ClipOval(
-                                                    child: Image.asset(
-                                                        'assets/images/Z sub.png')),
-                                              ),
-                                            ),
-                                          ],
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Padding(
+                    padding: EdgeInsets.zero,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          height: 415,
+                          width: 315,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Color(0xFFECECEC),
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(20),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: CircleAvatar(
+                                        radius: 20,
+                                        backgroundColor: Color(0xFFF85D05),
+                                        // Border radius
+                                        child: Image.asset(
+                                          'assets/images/Z sub.png',
+                                          fit: BoxFit.fill,
+                                          height: 12,
+                                          width: 12,
                                         ),
                                       ),
-                                      SizedBox(
-                                        width: 25,
-                                      ),
-                                      Container(
-                                        width: 10,
-                                        child: Column(
-                                          children: [
-                                            Padding(
-                                                padding:
-                                                    EdgeInsets.only(top: 10)),
-                                            Text(
+                                    ),
+                                    Container(
+                                      width: 10,
+                                      child: Column(
+                                        children: const [
+                                          Padding(
+                                            padding: EdgeInsets.all(7),
+                                            child: Text(
                                               "Zynerd Archive- NEET PG",
                                               maxLines: 1,
                                               overflow: TextOverflow.visible,
@@ -600,11 +638,12 @@ class _EditProfileState extends State<EditProfile> {
                                                   fontWeight: FontWeight.w500,
                                                   color: Color(0xFF0C0C0C)),
                                             ),
-                                            Padding(
-                                                padding:
-                                                    EdgeInsets.only(top: 1)),
-                                            Text(
-                                              'Started from Jan 11, 2022',
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                top: 1, left: 7),
+                                            child: Text(
+                                              'Started from Jan 11, 2022s',
                                               maxLines: 1,
                                               overflow: TextOverflow.visible,
                                               softWrap: false,
@@ -614,22 +653,494 @@ class _EditProfileState extends State<EditProfile> {
                                                   fontSize: 12,
                                                   color: Color(0xFF767A7C)),
                                             ),
-                                          ],
-                                        ),
+                                          ),
+                                        ],
                                       ),
-                                    ],
+                                    ),
+                                    Container(
+                                      child: Padding(
+                                          padding: EdgeInsets.only(top: 80),
+                                          child: RichText(
+                                              text: TextSpan(
+                                            children: const [
+                                              TextSpan(
+                                                text: '₹1499',
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontFamily: 'Open Sans',
+                                                    color: Color(0xFF0C0C0C)),
+                                              ),
+                                              TextSpan(
+                                                text: '\t\tfor 90 days',
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontFamily: 'Poppins',
+                                                  color: Color(0xFF9DA3A6),
+                                                ),
+                                              ),
+                                            ],
+                                          ))),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Divider(),
+                              Container(
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 15, right: 15, top: 10, bottom: 15),
+                                  child: Expanded(
+                                    child: Column(
+                                      children: const [
+                                        ListTile(
+                                          leading: Text(
+                                            'Status',
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFF9DA3A6),
+                                            ),
+                                          ),
+                                          trailing: Text('active'),
+                                        ),
+                                        ListTile(
+                                          leading: Text(
+                                            'Payment Amount',
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFF9DA3A6),
+                                            ),
+                                          ),
+                                          trailing: Text(
+                                            '₹1499',
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily: 'Open Sans',
+                                                color: Color(0xFF0C0C0C)),
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading: Text(
+                                            'Payment Reference ID',
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFF9DA3A6),
+                                            ),
+                                          ),
+                                          trailing: Text(
+                                            'Pay_Im5ns8gbK3wfBm',
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily: 'Open Sans',
+                                                color: Color(0xFF0C0C0C)),
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading: Text(
+                                            'Expire on',
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFF9DA3A6),
+                                            ),
+                                          ),
+                                          trailing: Text(
+                                            'April 11, 2022',
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily: 'Open Sans',
+                                                color: Color(0xFF0C0C0C)),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    )
-                  ],
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          height: 415,
+                          width: 315,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Color(0xFFECECEC),
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(20),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: CircleAvatar(
+                                        radius: 20,
+                                        backgroundColor: Color(0xFFF85D05),
+                                        // Border radius
+                                        child: Image.asset(
+                                          'assets/images/Z sub.png',
+                                          fit: BoxFit.fill,
+                                          height: 12,
+                                          width: 12,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 10,
+                                      child: Column(
+                                        children: const [
+                                          Padding(
+                                            padding: EdgeInsets.all(7),
+                                            child: Text(
+                                              "Zynerd Archive- NEET PG",
+                                              maxLines: 1,
+                                              overflow: TextOverflow.visible,
+                                              softWrap: false,
+                                              textAlign: TextAlign.left,
+                                              style: TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Color(0xFF0C0C0C)),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                top: 1, left: 7),
+                                            child: Text(
+                                              'Started from Jan 11, 2022s',
+                                              maxLines: 1,
+                                              overflow: TextOverflow.visible,
+                                              softWrap: false,
+                                              textAlign: TextAlign.left,
+                                              style: TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 12,
+                                                  color: Color(0xFF767A7C)),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      child: Padding(
+                                          padding: EdgeInsets.only(top: 80),
+                                          child: RichText(
+                                              text: TextSpan(
+                                            children: const [
+                                              TextSpan(
+                                                text: '₹1499',
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontFamily: 'Open Sans',
+                                                    color: Color(0xFF0C0C0C)),
+                                              ),
+                                              TextSpan(
+                                                text: '\t\tfor 90 days',
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontFamily: 'Poppins',
+                                                  color: Color(0xFF9DA3A6),
+                                                ),
+                                              ),
+                                            ],
+                                          ))),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Divider(),
+                              Container(
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 15, right: 15, top: 10, bottom: 15),
+                                  child: Expanded(
+                                    child: Column(
+                                      children: const [
+                                        ListTile(
+                                          leading: Text(
+                                            'Status',
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFF9DA3A6),
+                                            ),
+                                          ),
+                                          trailing: Text('active'),
+                                        ),
+                                        ListTile(
+                                          leading: Text(
+                                            'Payment Amount',
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFF9DA3A6),
+                                            ),
+                                          ),
+                                          trailing: Text(
+                                            '₹1499',
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily: 'Open Sans',
+                                                color: Color(0xFF0C0C0C)),
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading: Text(
+                                            'Payment Reference ID',
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFF9DA3A6),
+                                            ),
+                                          ),
+                                          trailing: Text(
+                                            'Pay_Im5ns8gbK3wfBm',
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily: 'Open Sans',
+                                                color: Color(0xFF0C0C0C)),
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading: Text(
+                                            'Expire on',
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFF9DA3A6),
+                                            ),
+                                          ),
+                                          trailing: Text(
+                                            'April 11, 2022',
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily: 'Open Sans',
+                                                color: Color(0xFF0C0C0C)),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          height: 415,
+                          width: 315,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Color(0xFFECECEC),
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(20),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: CircleAvatar(
+                                        radius: 20,
+                                        backgroundColor: Color(0xFFF85D05),
+                                        // Border radius
+                                        child: Image.asset(
+                                          'assets/images/Z sub.png',
+                                          fit: BoxFit.fill,
+                                          height: 12,
+                                          width: 12,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 10,
+                                      child: Column(
+                                        children: const [
+                                          Padding(
+                                            padding: EdgeInsets.all(7),
+                                            child: Text(
+                                              "Zynerd Archive- NEET PG",
+                                              maxLines: 1,
+                                              overflow: TextOverflow.visible,
+                                              softWrap: false,
+                                              textAlign: TextAlign.left,
+                                              style: TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Color(0xFF0C0C0C)),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                top: 1, left: 7),
+                                            child: Text(
+                                              'Started from Jan 11, 2022s',
+                                              maxLines: 1,
+                                              overflow: TextOverflow.visible,
+                                              softWrap: false,
+                                              textAlign: TextAlign.left,
+                                              style: TextStyle(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 12,
+                                                  color: Color(0xFF767A7C)),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      child: Padding(
+                                          padding: EdgeInsets.only(top: 80),
+                                          child: RichText(
+                                              text: TextSpan(
+                                            children: const [
+                                              TextSpan(
+                                                text: '₹1499',
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontFamily: 'Open Sans',
+                                                    color: Color(0xFF0C0C0C)),
+                                              ),
+                                              TextSpan(
+                                                text: '\t\tfor 90 days',
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontFamily: 'Poppins',
+                                                  color: Color(0xFF9DA3A6),
+                                                ),
+                                              ),
+                                            ],
+                                          ))),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Divider(),
+                              Container(
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 15, right: 15, top: 10, bottom: 15),
+                                  child: Expanded(
+                                    child: Column(
+                                      children: const [
+                                        ListTile(
+                                          leading: Text(
+                                            'Status',
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFF9DA3A6),
+                                            ),
+                                          ),
+                                          trailing: Text('active'),
+                                        ),
+                                        ListTile(
+                                          leading: Text(
+                                            'Payment Amount',
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFF9DA3A6),
+                                            ),
+                                          ),
+                                          trailing: Text(
+                                            '₹1499',
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily: 'Open Sans',
+                                                color: Color(0xFF0C0C0C)),
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading: Text(
+                                            'Payment Reference ID',
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFF9DA3A6),
+                                            ),
+                                          ),
+                                          trailing: Text(
+                                            'Pay_Im5ns8gbK3wfBm',
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily: 'Open Sans',
+                                                color: Color(0xFF0C0C0C)),
+                                          ),
+                                        ),
+                                        ListTile(
+                                          leading: Text(
+                                            'Expire on',
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontFamily: 'Poppins',
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xFF9DA3A6),
+                                            ),
+                                          ),
+                                          trailing: Text(
+                                            'April 11, 2022',
+                                            style: TextStyle(
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily: 'Open Sans',
+                                                color: Color(0xFF0C0C0C)),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
