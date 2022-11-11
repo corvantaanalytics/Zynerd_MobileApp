@@ -53,7 +53,7 @@ class _VerifyOTPState extends State<VerifyOTP> {
                   Padding(
                     padding: EdgeInsets.only(right: 280),
                     child: Text(
-                      'Sign up,',
+                      'Sign up, ',
                       maxLines: 1,
                       overflow: TextOverflow.visible,
                       softWrap: false,
