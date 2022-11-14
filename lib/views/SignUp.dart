@@ -1,5 +1,4 @@
 import 'dart:developer';
-// import 'dart:html';
 import 'dart:ui';
 import 'package:intl/intl.dart';
 import 'package:flutter/gestures.dart';
@@ -10,16 +9,30 @@ import 'package:zynerd_app/views/subscription_policy.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:zynerd_app/views/verify_OTP.dart';
 
 import '../models/SignUp/States.dart';
 import '../models/post.dart';
 
+//   print(response);
+//   if (response.statusCode == 200) {
+//     // If the server did return a 200 OK response,
+//     // then parse the JSON.
+//     return SignUp.fromJson(jsonDecode(response.body));
+//   } else {
+//     // If the server did not return a 200 OK response,
+//     // then throw an exception.
+//     throw Exception('Failed to load album');
+//   }
+// }
+
 class SignUp extends StatefulWidget {
+  // final String State ;
+
   const SignUp({Key? key}) : super(key: key);
 
   @override
   _SignUpState createState() => _SignUpState();
+
 }
 
 void _pushMenu() {
@@ -31,7 +44,7 @@ void _pushMenu() {
 class _SignUpState extends State<SignUp> {
   late Future<SignUp> futureSignUp;
   TextEditingController dateinput = TextEditingController();
-
+  // var zynerdStates = List<String>;
   List<String> zynerdStates = List.empty();
   List<PreferredExams> preferredExams = List.empty();
 
@@ -49,20 +62,44 @@ class _SignUpState extends State<SignUp> {
       List<dynamic> preferredExamsStr = responseJson["data"]['preferred_exams'];
 
       preferredExams = examFromJson(preferredExamsStr);
-
+      print("preferredExamsList :: ${preferredExams}");
       return zynerdStates;
     } else {
       throw Exception();
     }
   }
 
-  postData() async {
-    var response = http
-        .post(Uri.parse('http://infra.zynerd.co.in/api_v2/signup/new'), body: {
-      "id": 1,
-      "name": "dvhi",
-    });
-  }
+  // @override
+  // void initState() {
+  //   dateinput.text = ""; //set the initial value of text field
+  //   super.initState();
+  // }
+
+  // String? _mySelection;
+
+  // final String url = "http://infra.zynerd.co.in/api_v2/signup/new";
+
+  // List data = List.filled(10000, 0, growable: true); //edited line
+
+  // Future<String> getSWData() async {
+  //   var res = await http.get(Uri.parse(url));
+  //   var resBody = json.decode(res.body);
+  //   print('resbody: $resBody');
+  //   setState(() {
+  //     resBody;
+  //     print(resBody);
+  //   });
+
+  //   return "Sucess";
+  // }
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   this.getSWData();s
+
+  //   // futureSignUp = fetchSignUp();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -155,7 +192,7 @@ class _SignUpState extends State<SignUp> {
                               child: TextFormField(
                                   decoration: InputDecoration(
                                 border: InputBorder.none,
-                                hintText: 'Name',
+                                labelText: 'Name',
                                 contentPadding:
                                     EdgeInsets.symmetric(vertical: 7),
                               ))))),
@@ -243,21 +280,53 @@ class _SignUpState extends State<SignUp> {
                           child: FutureBuilder<List<String>>(
                               future: getstates(),
                               builder: (context, items) {
+                                // print("object:$items");
                                 if (items.hasData) {
+                                 // print("Inside If object:$items");
                                   final States = items.data;
-                                  return DropdownButtonFormField<String>(
-                                    items: zynerdStates
-                                        .map((states) => DropdownMenuItem(
-                                              value: states,
-                                              child: Text(states),
-                                            ))
-                                        .toList(),
-                                    onChanged: (_) {},
-                                  );
-                                }
+                                 // print("object:$States");
+                                  return Text("States : $States?.states}");
+                                } else if (items.hasError) {
+                                //  print("Inside else if object:$items");
+                                  // final States = getstates();
 
+                                  //print("Stat:$zynerdStates");
+                                  return Text(items.error.toString());
+                                }
+                                // print("States:$zynerdStates");
+                              //  print("Data:$States");
                                 return CircularProgressIndicator();
                               }),
+                          // child:DropdownButton(
+                          //           items: .map((item) {
+                          //             return new DropdownMenuItem(
+                          //                 child: new Text(
+                          //                   item['States'],    //Names that the api dropdown contains
+                          //                   style: TextStyle(
+                          //                     fontSize: 13.0,
+                          //                   ),
+                          //                 ),
+                          //                 );
+                          //           }).toList(),
+                          //         onChanged: (_) {},
+                          //         ),
+                          // child: new DropdownButton(
+                          //  items: data.map((item) {
+                          //    return new DropdownMenuItem(
+                          //     value: getstates(),
+                          //     child: new Text(item['states']),
+                          //     value: item['states'].toString(),
+                          //   );
+                          // }
+                          // ).toList(),
+                          //   onChanged: (newVal) {
+                          //     setState(() {
+                          //         = newVal;
+                          //      });
+                          //    },
+                          //    value: _mySelection,
+                          //  ),
+                          //),
                         )
                       ],
                     ),
@@ -284,23 +353,16 @@ class _SignUpState extends State<SignUp> {
                             color: Colors.white,
                             borderRadius: new BorderRadius.circular(10.0),
                           ),
-                          child: FutureBuilder<List<String>>(
-                              future: getstates(),
-                              builder: (context, items) {
-                                if (items.hasData) {
-                                  return DropdownButtonFormField<
-                                      PreferredExams>(
-                                    items: preferredExams
-                                        .map((exam) => DropdownMenuItem(
-                                              value: exam,
-                                              child: Text(exam.name),
-                                            ))
-                                        .toList(),
-                                    onChanged: (_) {},
-                                  );
-                                }
-                                return CircularProgressIndicator();
-                              }),
+                          child: DropdownButtonFormField<PreferredExams>(
+                            items: preferredExams
+                                // items: zynerdStates
+                                .map((exam) => DropdownMenuItem(
+                                      value: exam,
+                                      child: Text(exam.name),
+                                    ))
+                                .toList(),
+                            onChanged: (_) {},
+                          ),
                         ),
                       ],
                     ),
@@ -330,7 +392,7 @@ class _SignUpState extends State<SignUp> {
                               child: TextFormField(
                                   decoration: InputDecoration(
                                 border: InputBorder.none,
-                                hintText: 'Email',
+                                labelText: 'Email',
                                 contentPadding:
                                     EdgeInsets.symmetric(vertical: 7),
                               ))))),
@@ -365,7 +427,7 @@ class _SignUpState extends State<SignUp> {
                                       border: InputBorder.none,
                                       contentPadding:
                                           EdgeInsets.symmetric(vertical: 7),
-                                      hintText: 'Your password',
+                                      labelText: 'Your password',
                                     )))),
                       ],
                     ),
@@ -460,11 +522,7 @@ class _SignUpState extends State<SignUp> {
                                 10) //content padding inside button
                             ),
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const VerifyOTP()),
-                          );
+                          //code to execute when this button is pressed.
                         },
                         child: Text(
                           'Request OTP',

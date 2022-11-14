@@ -1,9 +1,45 @@
 
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:zynerd_app/views/Dashboard.dart';
 import 'package:zynerd_app/views/ForgotPassword.dart';
 import 'package:zynerd_app/views/SignUp.dart';
+import 'package:zynerd_app/views/landing.dart';
+
+ signin(email, password) async {
+    print("Calling");
+
+    Map data = {
+      'email': email?.toString(),
+      'password': password?.toString(),
+     
+    };
+    print(data.toString());
+    String body = json.encode(data);
+    var response = await http.post(
+      Uri.parse('http://infra.zynerd.co.in/api_v2/user_sessions/login'),
+      body: body,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    );
+    print(response.body);
+    print(response.statusCode);
+    if (response.statusCode == 200) {
+      // return MaterialPageRoute(
+      //   builder: (BuildContext context) => const VerifyOTP(),
+      // ); 
+       print('success');
+      
+    
+     
+    } else {
+      print('error');
+    }
+  }
+
 
 class Signin extends StatefulWidget {
   const Signin({Key? key}) : super(key: key);
@@ -18,8 +54,11 @@ void _pushMenu() {
   // );
 }
 
+
 class  _SigninState  extends State<Signin> {
   @override
+   final TextEditingController email = new TextEditingController();
+  final TextEditingController password = new TextEditingController();
   Widget build(BuildContext context) {
    return MaterialApp(
         home: Scaffold(
@@ -118,6 +157,7 @@ class  _SigninState  extends State<Signin> {
                       child: Padding(
                           padding: EdgeInsets.only(left: 15, right: 15, top: 5),
                           child: TextFormField(
+                            controller: email,
                               decoration: InputDecoration(
                             border: InputBorder.none,
                             labelText: 'Email',
@@ -153,9 +193,10 @@ class  _SigninState  extends State<Signin> {
                                 EdgeInsets.only(left: 15, right: 15, top: 5),
                                 
                             child: TextFormField(
+                                 controller: password,
                                 obscureText: true,
                                 decoration: InputDecoration(
-                                  
+                                
                                   border: InputBorder.none,
                                   contentPadding: EdgeInsets.symmetric(vertical: 7),
                                    labelText: 'Your password',
@@ -211,10 +252,16 @@ class  _SigninState  extends State<Signin> {
                   padding: EdgeInsets.all(10) //content padding inside button
                 ),
                   onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Dashboard()),
-            );
+            signin(
+                           
+                            email.text,
+                            password.text,
+                           
+                          ).then((_) {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => Dashboard()));
+                          });
           },
                 child: Text(
                                   'Sign in',
