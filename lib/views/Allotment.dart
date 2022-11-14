@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:zynerd_app/views/About_Us.dart';
 import 'package:zynerd_app/views/AllotmentMapping.dart';
+import 'package:zynerd_app/views/ClosingRanks.dart';
+import 'package:zynerd_app/views/EditProfie.dart';
 import 'package:zynerd_app/views/OverlayPages/FeesDetails.dart';
 import 'package:zynerd_app/views/OverlayPages/Remarks.dart';
 import './landing.dart';
-import './Datatable.dart';
+// import './Datatable.dart';
 
 class Allotments extends StatefulWidget {
   const Allotments({Key? key}) : super(key: key);
@@ -38,7 +40,7 @@ class _AllotmentState extends State<Allotments> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Landing()),
+                MaterialPageRoute(builder: (context) => const Closingranks()),
               );
             },
           ),
@@ -66,9 +68,25 @@ class _AllotmentState extends State<Allotments> {
         ),
         actions: [
           Container(
-            width: 30,
-            child: Image.asset('assets/images/Dashboard/DefaultProfile.png'),
-          ),
+            child: IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const EditProfile()),
+                );
+              },
+              icon: Image.asset(
+                'assets/images/Dashboard/DefaultProfile.png',
+                height: 25,
+                width: 400,
+                fit: BoxFit.fill,
+              ),
+            ),
+          )
+          // Container(
+          //   width: 30,
+          //   child: Image.asset('assets/images/Dashboard/DefaultProfile.png'),
+          // ),
         ],
         backgroundColor: Colors.white,
       ),
