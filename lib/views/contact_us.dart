@@ -1,5 +1,8 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:zynerd_app/views/About_Us.dart';
+import 'package:zynerd_app/views/EditProfie.dart';
 import 'package:zynerd_app/views/FAQ.dart';
 
 class ContactUs extends StatefulWidget {
@@ -30,7 +33,7 @@ class _ContactUsState extends State<ContactUs> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const AboutUs()),
+              MaterialPageRoute(builder: (context) => const EditProfile()),
             );
           },
         ),
@@ -53,6 +56,7 @@ class _ContactUsState extends State<ContactUs> {
               height: 312,
               width: 335,
               margin: EdgeInsets.all(14.0),
+              alignment: Alignment.center,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage('assets/images/Landing/Rectangle.png'),
@@ -213,68 +217,84 @@ class _ContactUsState extends State<ContactUs> {
                     height: 15,
                   ),
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(padding: EdgeInsets.only(right: 30)),
-                      CircleAvatar(
-                        radius: 20,
-                        backgroundColor: Color.fromARGB(255, 189, 207, 225),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8), // Border radius
-                          child: ClipOval(
-                              child: Image.asset(
-                                  'assets/images/Landing/Quora.png')),
+                      Padding(padding: EdgeInsets.all(10)),
+                      Container(
+                        child: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: Color.fromARGB(255, 189, 207, 225),
+                          // Border radius
+                          child: Image.asset(
+                            'assets/images/Landing/Quora.png',
+                            fit: BoxFit.fill,
+                            height: 15,
+                            width: 15,
+                          ),
                         ),
                       ),
                       SizedBox(
                         width: 20,
                       ),
-                      CircleAvatar(
-                        radius: 20,
-                        backgroundColor: Color.fromARGB(255, 189, 207, 225),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8), // Border radius
-                          child: ClipOval(
-                              child: Image.asset(
-                                  'assets/images/Landing/Facebook.png')),
+                      Container(
+                        child: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: Color.fromARGB(255, 189, 207, 225),
+                          // Border radius
+                          child: Image.asset(
+                            'assets/images/Landing/Facebook.png',
+                            fit: BoxFit.fill,
+                            height: 15,
+                            width: 13,
+                          ),
                         ),
                       ),
                       SizedBox(
                         width: 20,
                       ),
-                      CircleAvatar(
-                        radius: 20,
-                        backgroundColor: Color.fromARGB(255, 189, 207, 225),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8), // Border radius
-                          child: ClipOval(
-                              child: Image.asset(
-                                  'assets/images/Landing/Telegram.png')),
+                      Container(
+                        child: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: Color.fromARGB(255, 189, 207, 225),
+                          // Border radius
+                          child: Image.asset(
+                            'assets/images/Landing/Twitter.png',
+                            fit: BoxFit.fill,
+                            height: 15,
+                            width: 15,
+                          ),
                         ),
                       ),
                       SizedBox(
                         width: 20,
                       ),
-                      CircleAvatar(
-                        radius: 20,
-                        backgroundColor: Color.fromARGB(255, 189, 207, 225),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8), // Border radius
-                          child: ClipOval(
-                              child: Image.asset(
-                                  'assets/images/Landing/Twitter.png')),
+                      Container(
+                        child: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: Color.fromARGB(255, 189, 207, 225),
+                          // Border radius
+                          child: Image.asset(
+                            'assets/images/Landing/Telegram.png',
+                            fit: BoxFit.fill,
+                            height: 16,
+                            width: 15,
+                          ),
                         ),
                       ),
                       SizedBox(
                         width: 20,
                       ),
-                      CircleAvatar(
-                        radius: 20,
-                        backgroundColor: Color.fromARGB(255, 189, 207, 225),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8), // Border radius
-                          child: ClipOval(
-                              child: Image.asset(
-                                  'assets/images/Landing/Youtube.png')),
+                      Container(
+                        child: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: Color.fromARGB(255, 189, 207, 225),
+                          // Border radius
+                          child: Image.asset(
+                            'assets/images/Landing/Youtube.png',
+                            fit: BoxFit.cover,
+                            height: 15,
+                            width: 18,
+                          ),
                         ),
                       ),
                     ],
