@@ -3,9 +3,55 @@ import 'package:flutter/material.dart';
 import 'package:zynerd_app/views/ForgotPassword2.dart';
 import 'package:zynerd_app/views/ForgotPassword2.dart';
 import 'package:zynerd_app/views/Signin.dart';
-
+import 'package:email_auth/email_auth.dart';
 import 'SignUp.dart';
+import 'dart:async';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
+forgotpassword(email) async {
+    print("Calling");
+
+    Map data = {
+      'email': email?.toString(),
+     
+    };
+    print(data.toString());
+    String body = json.encode(data);
+    var response = await http.post(
+      Uri.parse('http://infra.zynerd.co.in/api_v2/user_sessions/forgot_password'),
+      body: body,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    );
+    print(response.body);
+    print(response.statusCode);
+    if (response.statusCode == 200) {
+      // return MaterialPageRoute(
+      //   builder: (BuildContext context) => const VerifyOTP(),
+      // ); 
+       print('success');
+      
+     
+    } else {
+      print('error');
+    }
+  }
+
+  //OTP VERIFICATION
+  late EmailAuth emailAuth;
+  void sendOtp() async {
+    EmailAuth(sessionName: "Zynerd Verification");
+    var email;
+    var res = await emailAuth.sendOtp(recipientMail: email.text);
+
+    if (res) {
+      print("OTP SENT");
+    } else {
+      print("OTP cant be sent");
+    }
+  }
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
 
@@ -21,6 +67,7 @@ void _pushMenu() {
 
 class _ForgotPasswordState extends State<ForgotPassword> {
   @override
+  final TextEditingController email = new TextEditingController();
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
@@ -113,6 +160,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               padding:
                                   EdgeInsets.only(left: 15, right: 15, top: 5),
                               child: TextFormField(
+                                controller: email,
                                   decoration: InputDecoration(
                                 border: InputBorder.none,
                                 labelText: 'your email',
@@ -141,11 +189,17 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                                 10) //content padding inside button
                             ),
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ForgotPassword2()),
-                          );
+                           sendOtp();
+                          forgotpassword(
+                           
+                            email.text,
+                            
+                          ).then((_) {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => ForgotPassword2()));
+                          });
+                       
                         },
                         child: Text(
                           'Send OTP',
