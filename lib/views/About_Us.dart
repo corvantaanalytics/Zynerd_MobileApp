@@ -379,7 +379,8 @@ class AboutUsState extends State<AboutUs> {
                   Container(
                     child: Container(
                       height: 300,
-                      margin: EdgeInsets.all(14.0),
+                      width: 300,
+                      margin: EdgeInsets.all(20.0),
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                             image:
